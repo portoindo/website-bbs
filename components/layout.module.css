@@ -1,0 +1,19 @@
+.container {
+    min-height: 100vh;
+    height: fit-content;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background: rgb(175,205,255);
+    background: linear-gradient(21deg, rgba(175,205,255,1) 0%, rgba(251,251,251,0.37307422969187676) 48%, rgba(255,227,179,1) 100%); */
+  }
+  .bg-normal{
+    background: rgb(175,205,255);
+    background: linear-gradient(21deg, rgba(175,205,255,1) 0%, rgba(251,251,251,0.37307422969187676) 48%, rgba(255,227,179,1) 100%);
+  }
+  .bg-reverse{
+    background: rgb(175,205,255);
+    background: linear-gradient(155deg, rgba(175,205,255,1) 0%, rgba(251,251,251,0.37307422969187676) 48%, rgba(255,227,179,1) 100%);
+  }
