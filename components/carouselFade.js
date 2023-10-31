@@ -16,11 +16,19 @@ export default function CarouselFade(props) {
     const [showContent, setShowContent] = useState(contents[0])
     // const [check, setCheck] = useState(true)
     // const [isChange, setIsChange] = useState(false)
+    // var time = setTimeout(() => {
+    //                 changeContent()
+    //             }, 5500);
 
     useEffect(() => {
-        setTimeout(() => {
+        // time
+        // clearTimeout(time);
+        const time =  setTimeout(() => {
             changeContent()
           }, 5500);
+          return () =>{
+            clearInterval(time)
+          }
     })
 
     // useEffect(() => {

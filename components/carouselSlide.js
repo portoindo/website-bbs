@@ -35,9 +35,16 @@ export default function CarouselSlide(props) {
         setRightSlide(contents[index+1])
     },[])
 
-    // useEffect(() => {
-    //     initial
-    // })
+    useEffect(() => {
+        // time
+        // clearTimeout(time);
+        const time =  setTimeout(() => {
+            setDirection("right")
+          }, 10000);
+          return () =>{
+            clearInterval(time)
+          }
+    })
 
     useEffect(() => {
         // clearTimeout(initial)
@@ -124,7 +131,7 @@ export default function CarouselSlide(props) {
                          <div className={styles['slide-desc']}>
                             <Box sx={{width:'100%', maxHeight:110,minHeight:110, overflowX: 'hidden',overflowY:'auto',
                                 '@media (max-width: 768px)': {width: '100%'}}}  ref={containerMiddleDescRef} >
-                                <Fade direction={inOutDirection} in={check} mountOnEnter unmountOnExit container={containerMiddleDescRef.current} timeout={500}>
+                                <Fade direction={inOutDirection} in={check} mountOnEnter unmountOnExit container={containerMiddleDescRef.current} timeout={600}>
                                     <p className={styles['desc-txt']}>
                                         {middleSlide.desc}
                                     </p>

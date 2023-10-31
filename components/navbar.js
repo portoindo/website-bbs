@@ -16,9 +16,10 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Image from 'next/image';
 import styles from './navbar.module.css';
+import Link from 'next/link';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'Portofolio', 'Service', 'Our Clients', 'Contact Us' ];
+const navItems = ['home', 'portofolio', 'service', 'our-clients', 'contact-us' ];
 
 export default function Navbar(props) {
   const { window } = props;
@@ -78,7 +79,9 @@ export default function Navbar(props) {
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
               <Button key={item} sx={{ color: '#fff', marginLeft:2 }}>
-                {item}
+                <Link href={`#${item}`}>
+                  {item.replace("-", " ")}
+                </Link>
               </Button>
             ))}
           </Box>

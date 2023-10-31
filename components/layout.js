@@ -10,11 +10,11 @@ export default function Layout(props) {
         <link rel="icon" href="/images/logo-bbs.png" />
     </Head>
     {props.reverse === false?
-        <div className={`${styles.container} ${styles["bg-normal"]}`}>
+        <div className={`${styles.container} ${styles["bg-normal"]}`} id={props.id}>
             {props.children}
         </div>
     :
-        <div className={`${styles.container} ${styles["bg-reverse"]}`}>
+        <div className={`${styles.container} ${styles["bg-reverse"]}`} id={props.id}>
             {props.children}
         </div>
     }

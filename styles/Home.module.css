@@ -9,11 +9,65 @@
   width: 500px;
 }
 
+/* BBS VALUES */
+.values{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.value{
+  width: 300px;
+  height: 450px;
+  background-color: rgb(255, 255, 255);
+}
+
+/* PORTOFOLIO */
 .portofolio-txt{
   margin-left: 40%;
   font-size: 30px;
 }
 
+/* SERVICE */
+.services{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.service{
+  width: 350px;
+  height: 350px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+
+/* OUR CLIENTS */
+.clients{
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  overflow-x:auto;
+  padding-right: 10px;
+}
+.horizontal-img{
+  object-fit: cover;
+  height: 200px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  min-width: 300px;
+}
+.vertical-img{
+  object-fit: cover;
+  object-position: 50% 0px;
+  margin-left: 10px;
+  /* margin-right: 10px; */
+  align-self: center;
+  min-width: 230;
+}
 
 .footer-sections{
   display: flex;
