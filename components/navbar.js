@@ -70,8 +70,8 @@ export default function Navbar(props) {
           <div  className={styles['nav-logo']}>
             <Image
                 src="/images/logo-bbs.png" // Route of the image file
-                height={45} // Desired size with correct aspect ratio
-                width={65} // Desired size with correct aspect ratio
+                height={55} // Desired size with correct aspect ratio
+                width={80} // Desired size with correct aspect ratio
                 alt="Your Name"
             />
           </div>

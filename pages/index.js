@@ -2,7 +2,11 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Layout from '../components/layout';
 import Navbar from '../components/navbar';
-import Carousel from '../components/carousel';
+import CarouselFade from '../components/carouselFade';
+import CarouselSlide from '../components/carouselSlide';
+import TiktokIcon from '../public/icons/tiktok';
+import InstagramIcon from '../public/icons/instagram';
+import LinkedInIcon from '../public/icons/linkedin';
 
 export default function Home() {
   return (
@@ -16,101 +20,94 @@ export default function Home() {
             <p>Professional, efficient, and competitive prices!</p>
             <h6>Established since 2000</h6>
           </div>
-          <Carousel/>
+          <CarouselFade/>
 
         </div>
         
       </Layout>
       <Layout reverse={true}>
-        {/* <main> */}
-          <h1 className={styles.title}>
-            Welcome to <a href="https://nextjs.org">Next.js!</a>
-          </h1>
-
-          <p className={styles.description}>
-            Get started by editing <code>pages/index.js</code>
-          </p>
-
-          <div className={styles.grid}>
-            <a href="https://nextjs.org/docs" className={styles.card}>
-              <h3>Documentation &rarr;</h3>
-              <p>Find in-depth information about Next.js features and API.</p>
-            </a>
-
-            <a href="https://nextjs.org/learn" className={styles.card}>
-              <h3>Learn &rarr;</h3>
-              <p>Learn about Next.js in an interactive course with quizzes!</p>
-            </a>
-
-            <a
-              href="https://github.com/vercel/next.js/tree/canary/examples"
-              className={styles.card}
-            >
-              <h3>Examples &rarr;</h3>
-              <p>Discover and deploy boilerplate example Next.js projects.</p>
-            </a>
-
-            <a
-              href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              className={styles.card}
-            >
-              <h3>Deploy &rarr;</h3>
-              <p>
-                Instantly deploy your Next.js site to a public URL with Vercel.
-              </p>
-            </a>
+        <h1>BBS Values</h1>
+        <div>
+          <div>
+            
           </div>
+        </div>
       </Layout>
       <Layout reverse={false}>
-        {/* <main> */}
-          <h1 className={styles.title}>
-            Welcome to <a href="https://nextjs.org">Next.js!</a>
-          </h1>
-
-          <p className={styles.description}>
-            Get started by editing <code>pages/index.js</code>
-          </p>
-
-          <div className={styles.grid}>
-            <a href="https://nextjs.org/docs" className={styles.card}>
-              <h3>Documentation &rarr;</h3>
-              <p>Find in-depth information about Next.js features and API.</p>
-            </a>
-
-            <a href="https://nextjs.org/learn" className={styles.card}>
-              <h3>Learn &rarr;</h3>
-              <p>Learn about Next.js in an interactive course with quizzes!</p>
-            </a>
-
-            <a
-              href="https://github.com/vercel/next.js/tree/canary/examples"
-              className={styles.card}
-            >
-              <h3>Examples &rarr;</h3>
-              <p>Discover and deploy boilerplate example Next.js projects.</p>
-            </a>
-
-            <a
-              href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              className={styles.card}
-            >
-              <h3>Deploy &rarr;</h3>
-              <p>
-                Instantly deploy your Next.js site to a public URL with Vercel.
-              </p>
-            </a>
+        <h1>Portofolio</h1>
+        <div className={styles.portofolio}>
+          <CarouselSlide/>
+        </div>
+        <h5 className={styles['portofolio-txt']}>Trusted for over Two Decades</h5>
+      </Layout>
+      <Layout reverse={true}>
+        <h1>Service</h1>
+        <div>
+          <div>
+            
           </div>
+        </div>
+      </Layout>
+      <Layout reverse={false}>
+        <h1>Our Clients</h1>
+        <div>
+          <div>
+            
+          </div>
+        </div>
+      </Layout>
+      <Layout reverse={true}>
+        <h1>Let's Collaborate!</h1>
+        <div>
+          <div>
+            
+          </div>
+        </div>
       </Layout>
       <footer>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered by{' '}
-            <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
-          </a>
-        </footer>
+        <div className={`${styles["footer-sections"]} ${styles.titles}`}>
+            <div className={styles["footer-section-lg"]}>
+              <h2 className={styles["footer-section-title"]}>Our Office</h2>
+            </div>
+            <div className={styles["footer-section"]}>
+              <h2 className={styles["footer-section-title"]}>Follow us</h2>
+            </div>
+            <div className={styles["footer-section"]}>
+              <h2 className={styles["footer-section-title"]}>Tags</h2>
+            </div>
+            <div className={styles["footer-section-lg"]}>
+              <h2 className={styles["footer-section-title"]}>Help & Support</h2>
+            </div>
+
+        </div>
+        <div className={styles["footer-sections"]}>
+          {/* <div> */}
+            <div className={styles["footer-section-lg"]}>
+              {/* <h2 className={styles["footer-section-title"]}>Our Office</h2> */}
+              <p>alamat</p>
+              <p>phone</p>
+              <p>email</p>
+            </div>
+            <div className={styles["footer-section"]}>
+              {/* <h2 className={styles["footer-section-title"]}>Follow us</h2> */}
+              <p className={styles["social-media"]}><TiktokIcon/>&nbsp;Tiktok</p>
+              <p className={styles["social-media"]}><InstagramIcon/>&nbsp;Instagram</p>
+              <p className={styles["social-media"]}><LinkedInIcon/>&nbsp;LinkedIn</p>
+            </div>
+            <div className={styles["footer-section"]}>
+              {/* <h2 className={styles["footer-section-title"]}>Tags</h2> */}
+              <p>Alamat</p>
+            </div>
+            <div className={styles["footer-section-lg"]}>
+              {/* <h2 className={styles["footer-section-title"]}>Help & Support</h2> */}
+              <p>terms & conditions</p>
+              <p>Contact Us</p>
+            </div>
+          {/* </div> */}
+        </div>
+        <p className={styles.copyright}>Ⓒ Copyright 2023 Billingual Business Service</p>
+      </footer>
+      
     </>
   );
 }
