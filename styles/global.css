@@ -18,11 +18,51 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
+@font-face {
+  font-family: 'futura-bold';
+  src: url('../public/fonts/Futura/FuturaLTProBold.otf');
 }
 
-img {
-  max-width: 100%;
-  display: block;
+@font-face {
+  font-family: 'futura-medium';
+  src: url('../public/fonts/Futura/FuturaLTProBold.otf');
+}
+
+@font-face {
+  font-family: 'futura';
+  src: url('../public/fonts/Futura/FuturaLTProMedium.otf');
+}
+
+@font-face {
+  font-family: 'thesignature';
+  src: url('../public/fonts/TheSignature/Thesignature.ttf');
+}
+
+h1{
+  font-family: 'futura-bold';
+  font-weight: bolder;
+  font-size: 45px;
+}
+
+h3{
+  font-family: 'futura-medium';
+  font-size: 25px;
+}
+
+h5{
+  font-family: 'thesignature';
+  font-size: 50px;
+  margin: 20px 0 10px 0;
+}
+
+h6{
+  font-family: 'thesignature';
+  font-size: 25px;
+  margin: 20px 0 20px 0;
+}
+
+
+p{
+  font-family: 'futura';
+  margin: 0;
 }

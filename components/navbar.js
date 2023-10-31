@@ -57,7 +57,7 @@ export default function Navbar(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{height:80, justifyContent:'center'}}>
+      <AppBar component="nav" sx={{height:'fit-content', justifyContent:'center', }}>
         <Toolbar sx={{justifyContent:'space-between'}}>
           <IconButton
             color="inherit"
@@ -80,7 +80,7 @@ export default function Navbar(props) {
             {navItems.map((item) => (
               <Button key={item} sx={{ color: '#fff', marginLeft:2 }}>
                 <Link href={`#${item}`}>
-                  {item.replace("-", " ")}
+                  <h3 className={styles["nav-txt"]}>{item.replace("-", " ")}</h3>
                 </Link>
               </Button>
             ))}
