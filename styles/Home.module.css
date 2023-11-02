@@ -102,9 +102,11 @@
 } */
 .footer-section{
   min-width:300px;
+  max-width: 300px;
 }
 .footer-section p{
   margin-bottom: 10px;
+  font-size: 15px;
 }
 .footer-section-title{
   text-align: center;

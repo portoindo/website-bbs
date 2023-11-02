@@ -9,6 +9,7 @@ import InstagramIcon from '../public/icons/instagram';
 import LinkedInIcon from '../public/icons/linkedin';
 import Image from 'next/image';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Home() {
 
@@ -69,6 +70,11 @@ export default function Home() {
      <Head>
         <title>Billingual Business Service</title>
         <link rel="icon" href="/images/logo-bbs.png" />
+        <meta name="robots" content="all" />
+        <link rel="canonical" href="https://bbstrans.vercel.app/"  key="canonical"/>
+        <meta name="description" content="BBS Translation" />
+        <meta name="keywords" content="sewa alat penerjemah, BBS translation, BBSTrans, alat penerjemah" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </Head>
       <Navbar/>
       <Layout reverse={false} id='home'>
@@ -150,15 +156,23 @@ export default function Home() {
           {/* <div> */}
             <div className={styles["footer-section"]}>
               <h2 className={styles["footer-section-title"]}>Our Office</h2>
-              <p>alamat</p>
-              <p>phone</p>
-              <p>email</p>
+              <p>Woodland Residence Tower Matoa, Jl. Raya Kalibata, RT.6/RW.7, Rawajati, Kec. Pancoran, Kota Jakarta Selatan, Daerah khusus Ibukota Jakarta 12750</p>
+              <p>Phone:&nbsp;+62 887-3561-5623</p>
+              <p>Email:&nbsp;info@bbstrans.com</p>
             </div>
             <div className={styles["footer-section"]}>
               <h2 className={styles["footer-section-title"]}>Follow us</h2>
-              <p className={styles["social-media"]}><TiktokIcon/>&nbsp;Tiktok</p>
-              <p className={styles["social-media"]}><InstagramIcon/>&nbsp;Instagram</p>
-              <p className={styles["social-media"]}><LinkedInIcon/>&nbsp;LinkedIn</p>
+              <Link href="https://www.tiktok.com/@bbstrans">
+                <p className={styles["social-media"]}><TiktokIcon/>&nbsp;BBSTrans</p>
+              </Link>
+              <Link href="https://www.instagram.com/bbstrans/">
+                <p className={styles["social-media"]}>
+                    <InstagramIcon/>&nbsp;BBSTranslation
+                </p>
+              </Link>
+              <Link href="https://www.linkedin.com/in/bilingual-business-services-b26a0b162/">
+                <p className={styles["social-media"]}><LinkedInIcon/>&nbsp;BBSTranslation</p>
+              </Link>
             </div>
             <div className={styles["footer-section"]}>
               <h2 className={styles["footer-section-title"]}>Tags</h2>
