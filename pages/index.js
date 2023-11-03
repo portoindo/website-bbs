@@ -73,7 +73,7 @@ export default function Home() {
         <meta name="robots" content="all" />
         <link rel="canonical" href="https://bbstrans.vercel.app/"  key="canonical"/>
         <meta name="description" content="BBS Translation" />
-        <meta name="keywords" content="sewa alat penerjemah, BBS translation, BBSTrans, alat penerjemah" />
+        <meta name="keywords" content="sewa alat penerjemah, BBS translation, BBSTrans, alat penerjemah, alat interpreter, sewa alat interpreter, sewa delegate mic, interpreter equipment rental"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </Head>
       <Navbar/>

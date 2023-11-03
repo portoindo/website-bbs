@@ -43,8 +43,12 @@ export default function Navbar(props) {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+            <ListItemButton sx={{justifyContent:"center"}}>
+            {/* <div className={styles["drawer-btn"]}> */}
+              <Link href={`#${item}`} className={styles["drawer-link"]}>
+                <p className={styles["nav-txt"]}>{item.replace("-", " ")}</p>
+              </Link>
+            {/* </div> */}
             </ListItemButton>
           </ListItem>
         ))}
@@ -83,7 +87,7 @@ export default function Navbar(props) {
                   <h3 className={styles["nav-txt"]}>{item.replace("-", " ")}</h3>
                 </Link>
               </Button>
-            ))}
+            ))} 
           </Box>
         </Toolbar>
       </AppBar>
