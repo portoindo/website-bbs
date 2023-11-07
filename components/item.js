@@ -8,9 +8,12 @@ export default function Item(props) {
 
     useEffect(()=> {
         setCheck(true)
-        setTimeout(() => {
+        const time =setTimeout(() => {
             setCheck(false)
-          }, 5000);
+          }, 2800);
+        return () =>{
+        clearInterval(time)
+        }
     },[props])
 
     // useEffect(()=> {
@@ -23,8 +26,8 @@ export default function Item(props) {
         <Fade in={check}  mountOnEnter unmountOnExit timeout={900}>
             <Image
                 src={props.content.img} // Route of the image file
-                height={400} // Desired size with correct aspect ratio
-                width={600} // Desired size with correct aspect ratio
+                height={1000} // Desired size with correct aspect ratio
+                width={1500} // Desired size with correct aspect ratio
                 alt="Default Profile"
                 className={styles["img-item"]}
             />

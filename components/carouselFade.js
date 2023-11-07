@@ -25,7 +25,7 @@ export default function CarouselFade(props) {
         // clearTimeout(time);
         const time =  setTimeout(() => {
             changeContent()
-          }, 5500);
+          }, 3500);
           return () =>{
             clearInterval(time)
           }
@@ -46,7 +46,7 @@ export default function CarouselFade(props) {
 
   return (
     // <div className="carousel">
-        <Box sx={{width:600, height: 400, overflow: 'hidden', borderRadius:3, '@media (max-width: 600px)': {width:'fit-content'}} } ref={containerLeftRef}>
+        <Box sx={{width:"100vw", overflow: 'hidden'}} ref={containerLeftRef}>
            <Item content={showContent}/>
             {/* <Slide direction={inOutDirection} in={check} mountOnEnter unmountOnExit container={containerLeftRef.current} timeout={500}>
                 <div className={styles["slide-left"]} onClick={()=> setDirection("left")} >
