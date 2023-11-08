@@ -81,9 +81,9 @@ export default function Navbar(props) {
             />
           </div>
           <div className={styles.parallelogram}>
-            <Box sx={{ display: { xs: 'none', sm: 'block'}, paddingRight:2,  transform: "skew(30deg)", heigth:"100%"}}>
+            <Box sx={{ display: { xs: 'none', sm: 'flex'}, paddingRight:2,  transform: "skew(30deg)", heigth:"100%", alignItems:"center", flexWrap:"wrap"}}>
               {navItems.map((item) => (
-                <Button key={item} sx={{ marginLeft:2, height:"50px", display:"flex", alignSelf:"center"}}>
+                <Button key={item} sx={{ marginLeft:2, height:"50px"}}>
                   <Link href={`#${item}`}>
                     <h3 className={styles["nav-txt"]}>{item.replace("-", " ")}</h3>
                   </Link>
