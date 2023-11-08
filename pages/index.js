@@ -80,7 +80,7 @@ export default function Home() {
       <Layout reverse={false} id='home'>
         <div className={styles.home}>
           <div className={styles['home-txt']}>
-            <h1>Your Trusted Sworn Translator & Interpreter</h1>
+            <h1>Your Trusted Sworn Translator & Interpreter.</h1>
             <p>We offer certified translation service for various languanges and high-quality interpreting equipment rental, including Tour Guide Systems and Delegate Mic.</p>
             <p>Professional, efficient, and competitive prices!</p>
             <h6>Established Since 2000</h6>

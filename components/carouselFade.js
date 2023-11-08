@@ -22,7 +22,7 @@ export default function CarouselFade(props) {
     useEffect(() => {
         // time
         // clearTimeout(time);
-        const time =  setTimeout(() => {
+        const time =  setInterval(() => {
             changeContent()
           }, 10500);
           return () =>{
