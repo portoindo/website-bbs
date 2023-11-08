@@ -101,7 +101,7 @@ export default function CarouselSlide(props) {
     return (
         <div className={styles.carousel}>
             <div className={styles.slides}>
-                <Box sx={{width:'25%', height: 350, overflow: 'hidden', borderRadius:3,  '@media (max-width: 600px)': {display:'none'}}} ref={containerLeftRef}>
+                <Box sx={{width:"40%", height: 320, overflow: 'hidden', marginTop:5, '@media (max-width: 600px)': {display:'none'}}} ref={containerLeftRef}>
                     <Slide direction={inOutDirection} in={check} mountOnEnter unmountOnExit container={containerLeftRef.current} timeout={600}>
                         <div className={styles["slide"]} onClick={()=> setDirection("left")} >
                         <Image
@@ -115,8 +115,8 @@ export default function CarouselSlide(props) {
                     </Slide>
                 </Box>
                 {/* <div className={styles['container-middle']}> */}
-                    <Box sx={{width:'45%', height: 350, overflow: 'hidden', borderRadius:3, position:'relative',
-                    '@media (max-width: 600px)': {width: '100%'}}} ref={containerMiddleRef}>
+                    <Box sx={{width:"50%", height: 400, overflow: 'hidden', position:'absolute', zIndex:20, marginLeft:'auto', marginRight:'auto', left:0, right:0, bgcolor:"white",
+                    '@media (max-width: 600px)': {width: '100%', position:'relative'}}} ref={containerMiddleRef}>
                         <Slide direction={inOutDirection} in={check} mountOnEnter unmountOnExit container={containerMiddleRef.current} timeout={600}>
                             <div className={styles["slide-middle"]} >
                                 <Image
@@ -151,7 +151,7 @@ export default function CarouselSlide(props) {
                         </div>
                     </Box>
                 {/* </div> */}
-                 <Box sx={{width:'25%', height: 350, overflow: 'hidden',borderRadius:3,'@media (max-width: 600px)': {display:'none'} }} ref={containerRightRef}>
+                 <Box sx={{width:"40%", height: 320, overflow: 'hidden',  marginTop:5, '@media (max-width: 600px)': {display:'none'} }} ref={containerRightRef}>
                     <Slide direction={inOutDirection} in={check} mountOnEnter unmountOnExit container={containerRightRef.current} timeout={600}>
                         <div className={styles["slide"]} onClick={()=> setDirection("right")}>
                             <Image
