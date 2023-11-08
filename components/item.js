@@ -10,7 +10,7 @@ export default function Item(props) {
         setCheck(true)
         const time =setTimeout(() => {
             setCheck(false)
-          }, 9500);
+          }, 10000);
         return () =>{
         clearInterval(time)
         }
