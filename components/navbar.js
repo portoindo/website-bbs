@@ -61,8 +61,8 @@ export default function Navbar(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{height:'fit-content', justifyContent:'center', }}>
-        <Toolbar sx={{justifyContent:'space-between'}}>
+      <AppBar component="nav" sx={{height:'fit-content', justifyContent:'center'}}>
+        <div className={styles.toolbar}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -75,21 +75,23 @@ export default function Navbar(props) {
           <div  className={styles['nav-logo']}>
             <Image
                 src="/images/logo-bbs.png" // Route of the image file
-                height={57} // Desired size with correct aspect ratio
-                width={80} // Desired size with correct aspect ratio
+                height={68} // Desired size with correct aspect ratio
+                width={100} // Desired size with correct aspect ratio
                 alt="Your Name"
             />
           </div>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff', marginLeft:2 }}>
-                <Link href={`#${item}`}>
-                  <h3 className={styles["nav-txt"]}>{item.replace("-", " ")}</h3>
-                </Link>
-              </Button>
-            ))} 
-          </Box>
-        </Toolbar>
+          <div className={styles.parallelogram}>
+            <Box sx={{ display: { xs: 'none', sm: 'block'}, paddingRight:2,  transform: "skew(30deg)", heigth:"100%"}}>
+              {navItems.map((item) => (
+                <Button key={item} sx={{ marginLeft:2, height:"50px", display:"flex", alignSelf:"center"}}>
+                  <Link href={`#${item}`}>
+                    <h3 className={styles["nav-txt"]}>{item.replace("-", " ")}</h3>
+                  </Link>
+                </Button>
+              ))} 
+            </Box>
+          </div>
+        </div>
       </AppBar>
       <nav>
         <Drawer
