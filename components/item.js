@@ -10,7 +10,7 @@ export default function Item(props) {
         setCheck(true)
         const time =setTimeout(() => {
             setCheck(false)
-          }, 10000);
+          }, 9500);
         return () =>{
         clearInterval(time)
         }
@@ -23,7 +23,7 @@ export default function Item(props) {
     // })
 
     return (
-        <Fade in={check}  mountOnEnter unmountOnExit timeout={600}>
+        <Fade in={check}  mountOnEnter unmountOnExit timeout={900}>
             <Image
                 src={props.content.img} // Route of the image file
                 height={1000} // Desired size with correct aspect ratio
