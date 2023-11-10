@@ -23,7 +23,7 @@ export default function Item(props) {
     // })
 
     return (
-        <Fade in={check}  mountOnEnter unmountOnExit timeout={900}>
+        <Fade in={check}  mountOnEnter unmountOnExit timeout={800}>
             <Image
                 src={props.content.img} // Route of the image file
                 height={1000} // Desired size with correct aspect ratio

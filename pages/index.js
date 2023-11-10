@@ -28,8 +28,23 @@ export default function Home() {
     {id:12,img:"/images/slide4.jpg", desc:"Proin ut ligula id elit hendrerit luctus. Ut id cursus mi. Morbi vitae congue dolor, ut suscipit dui. Pellentesque blandit turpis in dolor facilisis, ac aliquam mauris imperdiet. Fusce tristique vehicula nisi. In sagittis feugiat nisl id scelerisque. Nulla sodales lobortis posuere. Pellentesque turpis lorem"}
   ])
 
+  const [clients, setClients] = useState([
+    {id:1, img:"/images/Mirae_Asset_Sekuritas_Indo.png"},
+    {id:2, img:"/images/UOB.png"},
+    {id:3, img:"/images/Kementrian_Luar _Negeri.png"},
+    {id:4, img:"/images/Dyandra_Promosindo.png"},
+    {id:5, img:"/images/Pertamina_Geothermal_Energy.png"},
+    {id:6, img:"/images/Kementrian_Keuangan.png"},
+    {id:7, img:"/images/Kemenkes.png"},
+    {id:8, img:"/images/Oneject_Indonesia.jpg"},
+    {id:9, img:"/images/Kementrian_BUMN.png"},
+    {id:10, img:"/images/Bank_Bukopin.png"},
+    {id:11, img:"/images/Adhi_Karya.png"},
+    {id:12, img:"/images/CNBC_Indonesia.png"},
+  ])
 
-  const loadClientsImg = () => {
+
+  const loadPortofolioImg = () => {
     let images = [];
     for (let i = 0; i < Math.floor(contents.length/3); i++){
       images.push(
@@ -63,6 +78,56 @@ export default function Home() {
     }
     return images
   }
+
+  const loadClientsImg = () => {
+    let images = [];
+    for (let i = 0; i < Math.floor(clients.length/2); i++){
+      if (i%2 !== 0){
+        images.push(
+          <div className={styles['horizontal-imgs']}>
+             <Image
+                 src={clients[i*2].img} // Route of the image file
+                 height={200} // Desired size with correct aspect ratio
+                 width={200} // Desired size with correct aspect ratio
+                 alt="client"
+                 className={styles['horizontal-img-sm']}
+             />
+             <Image
+                 src={clients[(i*2)+1].img} // Route of the image file
+                 height={200} // Desired size with correct aspect ratio
+                 width={100} // Desired size with correct aspect ratio
+                 alt="client"
+                 className={styles['horizontal-img-sm']}
+             />
+           
+         </div>
+       )
+      }else{
+        images.push(
+          <div className={styles['horizontal-imgs']}>
+             <Image
+                 src={clients[i*2].img} // Route of the image file
+                 height={200} // Desired size with correct aspect ratio
+                 width={300} // Desired size with correct aspect ratio
+                 alt="client"
+                 className={styles['horizontal-img']}
+             />
+             <Image
+                 src={clients[(i*2)+1].img} // Route of the image file
+                 height={200} // Desired size with correct aspect ratio
+                 width={300} // Desired size with correct aspect ratio
+                 alt="client"
+                 className={styles['horizontal-img']}
+             />
+           
+         </div>
+       )
+
+      }
+    }
+    return images
+  }
+
 
 
   return (

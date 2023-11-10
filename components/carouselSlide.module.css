@@ -24,7 +24,8 @@
 .slide-middle{
     width: 100%;
     height: 500px;
-    /* background-color: aqua; */
+    display: flex;
+    place-content: center;
 }
 .slides{
     width: 100%;
