@@ -8,11 +8,10 @@ import TiktokIcon from '../public/icons/tiktok';
 import InstagramIcon from '../public/icons/instagram';
 import LinkedInIcon from '../public/icons/linkedin';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link';
 
 export default function Home() {
-
   const [contents, setContents] = useState([
     {id:1,img:"/images/slide1.jpg",desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus ullamcorper erat, sed tincidunt dolor ullamcorper eget. Suspendisse potenti. Quisque maximus varius felis a convallis. Praesent aliquet arcu ac purus fringilla aliquet."},
     {id:2,img:"/images/slide2.jpg",desc:"Maecenas viverra justo in condimentum mattis. Integer fermentum interdum cursus. Phasellus dignissim, enim et iaculis sagittis, magna metus commodo dui, nec maximus augue tellus at nulla. Etiam erat massa, scelerisque eget ex vel, vestibulum porta purus. Pellentesque at lectus nibh. Nulla quis purus eget purus bibendum vehicula non sit amet sapien. Duis non vestibulum libero. Nulla at magna elementum, eleifend purus ac, finibus quam."},
@@ -25,9 +24,10 @@ export default function Home() {
     {id:9,img:"/images/slide1.jpg",desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus ullamcorper erat, sed tincidunt dolor ullamcorper eget. Suspendisse potenti. Quisque maximus varius felis a convallis. Praesent aliquet arcu ac purus fringilla aliquet."},
     {id:10,img:"/images/slide2.jpg",desc:"Maecenas viverra justo in condimentum mattis. Integer fermentum interdum cursus. Phasellus dignissim, enim et iaculis sagittis, magna metus commodo dui, nec maximus augue tellus at nulla. Etiam erat massa, scelerisque eget ex vel, vestibulum porta purus. Pellentesque at lectus nibh. Nulla quis purus eget purus bibendum vehicula non sit amet sapien. Duis non vestibulum libero. Nulla at magna elementum, eleifend purus ac, finibus quam."},
     {id:11,img:"/images/slide3.jpg", desc:"Cras hendrerit lorem vitae libero finibus auctor ut ac nunc. Quisque facilisis ligula sit amet sem porta ornare. In ac dictum leo. Quisque maximus libero nec semper tempus. Mauris eleifend ex in nulla porttitor pharetra. Aliquam egestas non lorem eget ultricies. Suspendisse quis maximus ligula."},
-    {id:12,img:"/images/slide4.jpg", desc:"Proin ut ligula id elit hendrerit luctus. Ut id cursus mi. Morbi vitae congue dolor, ut suscipit dui. Pellentesque blandit turpis in dolor facilisis, ac aliquam mauris imperdiet. Fusce tristique vehicula nisi. In sagittis feugiat nisl id scelerisque. Nulla sodales lobortis posuere. Pellentesque turpis lorem"}
+    {id:12,img:"/images/slide4.jpg", desc:"Proin ut ligula id elit hendrerit luctus. Ut id cursus mi. Morbi vitae congue dolor, ut suscipit dui. Pellentesque blandit turpis in dolor facilisis, ac aliquam mauris imperdiet. Fusce tristique vehicula nisi. In sagittis feugiat nisl id scelerisque. Nulla sodales lobortis posuere. Pellentesque turpis lorem"},
+    {id:13,img:"/images/slide1.jpg", desc:"Proin ut ligula id elit hendrerit luctus. Ut id cursus mi. Morbi vitae congue dolor, ut suscipit dui. Pellentesque blandit turpis in dolor facilisis, ac aliquam mauris imperdiet. Fusce tristique vehicula nisi. In sagittis feugiat nisl id scelerisque. Nulla sodales lobortis posuere. Pellentesque turpis lorem"},
+    {id:14,img:"/images/slide1.jpg", desc:"Proin ut ligula id elit hendrerit luctus. Ut id cursus mi. Morbi vitae congue dolor, ut suscipit dui. Pellentesque blandit turpis in dolor facilisis, ac aliquam mauris imperdiet. Fusce tristique vehicula nisi. In sagittis feugiat nisl id scelerisque. Nulla sodales lobortis posuere. Pellentesque turpis lorem"}
   ])
-
   const [clients, setClients] = useState([
     {id:1, img:"/images/Mirae_Asset_Sekuritas_Indo.png"},
     {id:2, img:"/images/UOB.png"},
@@ -43,36 +43,54 @@ export default function Home() {
     {id:12, img:"/images/CNBC_Indonesia.png"},
   ])
 
+  const imgContainer = useRef()
 
   const loadPortofolioImg = () => {
     let images = [];
-    for (let i = 0; i < Math.floor(contents.length/3); i++){
+    for (let i = 0; i < Math.round(contents.length/3); i++){
       images.push(
         <>
-           <div className={styles['horizontal-imgs']}>
-              <Image
-                  src={contents[i*3].img} // Route of the image file
-                  height={200} // Desired size with correct aspect ratio
-                  width={300} // Desired size with correct aspect ratio
-                  alt="Default Profile"
-                  className={styles['horizontal-img']}
-              />
-              <Image
-                  src={contents[(i*3)+1].img} // Route of the image file
-                  height={200} // Desired size with correct aspect ratio
-                  width={300} // Desired size with correct aspect ratio
-                  alt="Default Profile"
-                  className={styles['horizontal-img']}
-              />
+           <div>
+            {contents[i*3]?
+              <div className={styles['img-container']} ref={imgContainer}>
+                <Image
+                    src={contents[i*3].img} // Route of the image file
+                    height={200} // Desired size with correct aspect ratio
+                    width={300} // Desired size with correct aspect ratio
+                    alt="Default Profile"
+                    className={`${styles['horizontal-img']} ${styles.proto}`}
+                />
+                <div className={styles['img-desc']}> asdfa sd</div>
+              </div>
+            :<></>}
+            {contents[(i*3)+1]?
+              <div className={styles['img-container']} ref={imgContainer}>
+                <Image
+                    src={contents[(i*3)+1].img} // Route of the image file
+                    height={200} // Desired size with correct aspect ratio
+                    width={300} // Desired size with correct aspect ratio
+                    alt="Default Profile"
+                    className={`${styles['horizontal-img']} ${styles.proto}`}
+                />
+               <div className={styles['img-desc']}> asdfa sd</div>
+              </div>
+            :<></>}
             
           </div>
-          <Image
-              src={contents[(i*3)+2].img} // Route of the image file
-              height={350} // Desired size with correct aspect ratio
-              width={230} // Desired size with correct aspect ratio
-              alt="Default Profile"
-              className={styles['vertical-img']}
-          />
+          <div className={styles['vertical-center']}>
+          {contents[(i*3)+2]?
+            <div className={styles['img-container']} ref={imgContainer}>
+              <Image
+                  src={contents[(i*3)+2].img} // Route of the image file
+                  height={350} // Desired size with correct aspect ratio
+                  width={230} // Desired size with correct aspect ratio
+                  alt="Default Profile"
+                  className={`${styles['vertical-img']} ${styles.proto}`}
+              />
+              <div className={styles['img-desc']}> zzzzzzzzzzz zzzzzz</div>
+              </div>  
+          :<></>}
+          </div>
         </>
       )
     }
@@ -81,24 +99,28 @@ export default function Home() {
 
   const loadClientsImg = () => {
     let images = [];
-    for (let i = 0; i < Math.floor(clients.length/2); i++){
+    for (let i = 0; i < Math.round(clients.length/2); i++){
       if (i%2 !== 0){
         images.push(
-          <div className={styles['horizontal-imgs']}>
+          <div>
+            {clients[i*2]?
              <Image
                  src={clients[i*2].img} // Route of the image file
                  height={200} // Desired size with correct aspect ratio
                  width={200} // Desired size with correct aspect ratio
                  alt="client"
-                 className={styles['horizontal-img-sm']}
+                 className={`${styles['horizontal-img-sm']} ${styles.client}`}
              />
-             <Image
-                 src={clients[(i*2)+1].img} // Route of the image file
-                 height={200} // Desired size with correct aspect ratio
-                 width={100} // Desired size with correct aspect ratio
-                 alt="client"
-                 className={styles['horizontal-img-sm']}
-             />
+             :<></>}
+             {clients[(i*2)+1]?
+              <Image
+                  src={clients[(i*2)+1].img} // Route of the image file
+                  height={200} // Desired size with correct aspect ratio
+                  width={200} // Desired size with correct aspect ratio
+                  alt="client"
+                  className={`${styles['horizontal-img-sm']} ${styles.client}`}
+              />
+            :<></>}
            
          </div>
        )
@@ -110,14 +132,14 @@ export default function Home() {
                  height={200} // Desired size with correct aspect ratio
                  width={300} // Desired size with correct aspect ratio
                  alt="client"
-                 className={styles['horizontal-img']}
+                 className={`${styles['horizontal-img']} ${styles.client}`}
              />
              <Image
                  src={clients[(i*2)+1].img} // Route of the image file
                  height={200} // Desired size with correct aspect ratio
                  width={300} // Desired size with correct aspect ratio
                  alt="client"
-                 className={styles['horizontal-img']}
+                 className={`${styles['horizontal-img']} ${styles.client}`}
              />
            
          </div>
@@ -172,7 +194,8 @@ export default function Home() {
       <Layout reverse={false} id='portofolio'>
         <h1 className={styles["section-title"]}>Portofolio</h1>
         <div className={styles.portofolio}>
-          <CarouselSlide/>
+          {/* <CarouselSlide/> */}
+          {loadPortofolioImg()}
         </div>
         <h5 className={styles['portofolio-txt']}>Trusted for over Two Decades</h5>
       </Layout>
