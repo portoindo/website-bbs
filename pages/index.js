@@ -4,72 +4,45 @@ import Layout from '../components/layout';
 import Navbar from '../components/navbar';
 import CarouselFade from '../components/carouselFade';
 import CarouselSlide from '../components/carouselSlide';
-import TiktokIcon from '../public/icons/tiktok';
-import InstagramIcon from '../public/icons/instagram';
-import LinkedInIcon from '../public/icons/linkedin';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 import Link from 'next/link';
+import { clientsData, portofoliosData, articlesData, servicesData } from '../components/data';
+import Footer from '../components/footer';
 
 export default function Home() {
-  const [contents, setContents] = useState([
-    {id:1,img:"/images/slide1.jpg",desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus ullamcorper erat, sed tincidunt dolor ullamcorper eget. Suspendisse potenti. Quisque maximus varius felis a convallis. Praesent aliquet arcu ac purus fringilla aliquet."},
-    {id:2,img:"/images/slide2.jpg",desc:"Maecenas viverra justo in condimentum mattis. Integer fermentum interdum cursus. Phasellus dignissim, enim et iaculis sagittis, magna metus commodo dui, nec maximus augue tellus at nulla. Etiam erat massa, scelerisque eget ex vel, vestibulum porta purus. Pellentesque at lectus nibh. Nulla quis purus eget purus bibendum vehicula non sit amet sapien. Duis non vestibulum libero. Nulla at magna elementum, eleifend purus ac, finibus quam."},
-    {id:3,img:"/images/slide3.jpg", desc:"Cras hendrerit lorem vitae libero finibus auctor ut ac nunc. Quisque facilisis ligula sit amet sem porta ornare. In ac dictum leo. Quisque maximus libero nec semper tempus. Mauris eleifend ex in nulla porttitor pharetra. Aliquam egestas non lorem eget ultricies. Suspendisse quis maximus ligula."},
-    {id:4,img:"/images/slide4.jpg", desc:"Proin ut ligula id elit hendrerit luctus. Ut id cursus mi. Morbi vitae congue dolor, ut suscipit dui. Pellentesque blandit turpis in dolor facilisis, ac aliquam mauris imperdiet. Fusce tristique vehicula nisi. In sagittis feugiat nisl id scelerisque. Nulla sodales lobortis posuere. Pellentesque turpis lorem"},
-    {id:5,img:"/images/slide1.jpg",desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus ullamcorper erat, sed tincidunt dolor ullamcorper eget. Suspendisse potenti. Quisque maximus varius felis a convallis. Praesent aliquet arcu ac purus fringilla aliquet."},
-    {id:6,img:"/images/slide2.jpg",desc:"Maecenas viverra justo in condimentum mattis. Integer fermentum interdum cursus. Phasellus dignissim, enim et iaculis sagittis, magna metus commodo dui, nec maximus augue tellus at nulla. Etiam erat massa, scelerisque eget ex vel, vestibulum porta purus. Pellentesque at lectus nibh. Nulla quis purus eget purus bibendum vehicula non sit amet sapien. Duis non vestibulum libero. Nulla at magna elementum, eleifend purus ac, finibus quam."},
-    {id:7,img:"/images/slide3.jpg", desc:"Cras hendrerit lorem vitae libero finibus auctor ut ac nunc. Quisque facilisis ligula sit amet sem porta ornare. In ac dictum leo. Quisque maximus libero nec semper tempus. Mauris eleifend ex in nulla porttitor pharetra. Aliquam egestas non lorem eget ultricies. Suspendisse quis maximus ligula."},
-    {id:8,img:"/images/slide4.jpg", desc:"Proin ut ligula id elit hendrerit luctus. Ut id cursus mi. Morbi vitae congue dolor, ut suscipit dui. Pellentesque blandit turpis in dolor facilisis, ac aliquam mauris imperdiet. Fusce tristique vehicula nisi. In sagittis feugiat nisl id scelerisque. Nulla sodales lobortis posuere. Pellentesque turpis lorem"},
-    {id:9,img:"/images/slide1.jpg",desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus ullamcorper erat, sed tincidunt dolor ullamcorper eget. Suspendisse potenti. Quisque maximus varius felis a convallis. Praesent aliquet arcu ac purus fringilla aliquet."},
-    {id:10,img:"/images/slide2.jpg",desc:"Maecenas viverra justo in condimentum mattis. Integer fermentum interdum cursus. Phasellus dignissim, enim et iaculis sagittis, magna metus commodo dui, nec maximus augue tellus at nulla. Etiam erat massa, scelerisque eget ex vel, vestibulum porta purus. Pellentesque at lectus nibh. Nulla quis purus eget purus bibendum vehicula non sit amet sapien. Duis non vestibulum libero. Nulla at magna elementum, eleifend purus ac, finibus quam."},
-    {id:11,img:"/images/slide3.jpg", desc:"Cras hendrerit lorem vitae libero finibus auctor ut ac nunc. Quisque facilisis ligula sit amet sem porta ornare. In ac dictum leo. Quisque maximus libero nec semper tempus. Mauris eleifend ex in nulla porttitor pharetra. Aliquam egestas non lorem eget ultricies. Suspendisse quis maximus ligula."},
-    {id:12,img:"/images/slide4.jpg", desc:"Proin ut ligula id elit hendrerit luctus. Ut id cursus mi. Morbi vitae congue dolor, ut suscipit dui. Pellentesque blandit turpis in dolor facilisis, ac aliquam mauris imperdiet. Fusce tristique vehicula nisi. In sagittis feugiat nisl id scelerisque. Nulla sodales lobortis posuere. Pellentesque turpis lorem"},
-    {id:13,img:"/images/slide1.jpg", desc:"Proin ut ligula id elit hendrerit luctus. Ut id cursus mi. Morbi vitae congue dolor, ut suscipit dui. Pellentesque blandit turpis in dolor facilisis, ac aliquam mauris imperdiet. Fusce tristique vehicula nisi. In sagittis feugiat nisl id scelerisque. Nulla sodales lobortis posuere. Pellentesque turpis lorem"},
-    {id:14,img:"/images/slide1.jpg", desc:"Proin ut ligula id elit hendrerit luctus. Ut id cursus mi. Morbi vitae congue dolor, ut suscipit dui. Pellentesque blandit turpis in dolor facilisis, ac aliquam mauris imperdiet. Fusce tristique vehicula nisi. In sagittis feugiat nisl id scelerisque. Nulla sodales lobortis posuere. Pellentesque turpis lorem"}
-  ])
-  const [clients, setClients] = useState([
-    {id:1, img:"/images/Mirae_Asset_Sekuritas_Indo.png"},
-    {id:2, img:"/images/UOB.png"},
-    {id:3, img:"/images/Kementrian_Luar _Negeri.png"},
-    {id:4, img:"/images/Dyandra_Promosindo.png"},
-    {id:5, img:"/images/Pertamina_Geothermal_Energy.png"},
-    {id:6, img:"/images/Kementrian_Keuangan.png"},
-    {id:7, img:"/images/Kemenkes.png"},
-    {id:8, img:"/images/Oneject_Indonesia.jpg"},
-    {id:9, img:"/images/Kementrian_BUMN.png"},
-    {id:10, img:"/images/Bank_Bukopin.png"},
-    {id:11, img:"/images/Adhi_Karya.png"},
-    {id:12, img:"/images/CNBC_Indonesia.png"},
-  ])
+  const [portofolio, setPortofolio] = useState(portofoliosData)
+  const [clients, setClients] = useState(clientsData)
+  const [articles, setArticles] = useState(articlesData)
+  const [services, setServices] = useState(servicesData)
 
   const imgContainer = useRef()
 
   const loadPortofolioImg = () => {
     let images = [];
-    for (let i = 0; i < Math.round(contents.length/3); i++){
+    for (let i = 0; i < Math.round(portofolio.length/3); i++){
       images.push(
         <>
            <div>
-            {contents[i*3]?
+            {portofolio[i*3]?
               <div className={styles['img-container']} ref={imgContainer}>
                 <Image
-                    src={contents[i*3].img} // Route of the image file
+                    src={portofolio[i*3].img} // Route of the image file
                     height={200} // Desired size with correct aspect ratio
                     width={300} // Desired size with correct aspect ratio
-                    alt="Default Profile"
-                    className={`${styles['horizontal-img']} ${styles.proto}`}
+                    alt="portofolio"
+                    className={`${styles['horizontal-img']} ${styles.porto}`}
                 />
                 <div className={styles['img-desc']}> asdfa sd</div>
               </div>
             :<></>}
-            {contents[(i*3)+1]?
+            {portofolio[(i*3)+1]?
               <div className={styles['img-container']} ref={imgContainer}>
                 <Image
-                    src={contents[(i*3)+1].img} // Route of the image file
+                    src={portofolio[(i*3)+1].img} // Route of the image file
                     height={200} // Desired size with correct aspect ratio
                     width={300} // Desired size with correct aspect ratio
-                    alt="Default Profile"
+                    alt="portofolio"
                     className={`${styles['horizontal-img']} ${styles.proto}`}
                 />
                <div className={styles['img-desc']}> asdfa sd</div>
@@ -78,13 +51,13 @@ export default function Home() {
             
           </div>
           <div className={styles['vertical-center']}>
-          {contents[(i*3)+2]?
+          {portofolio[(i*3)+2]?
             <div className={styles['img-container']} ref={imgContainer}>
               <Image
-                  src={contents[(i*3)+2].img} // Route of the image file
+                  src={portofolio[(i*3)+2].img} // Route of the image file
                   height={350} // Desired size with correct aspect ratio
                   width={230} // Desired size with correct aspect ratio
-                  alt="Default Profile"
+                  alt="portofolio"
                   className={`${styles['vertical-img']} ${styles.proto}`}
               />
               <div className={styles['img-desc']}> zzzzzzzzzzz zzzzzz</div>
@@ -106,10 +79,10 @@ export default function Home() {
             {clients[i*2]?
              <Image
                  src={clients[i*2].img} // Route of the image file
-                 height={200} // Desired size with correct aspect ratio
+                 height={150} // Desired size with correct aspect ratio
                  width={200} // Desired size with correct aspect ratio
                  alt="client"
-                 className={`${styles['horizontal-img-sm']} ${styles.client}`}
+                 className={`${styles['square-img']} ${styles.client}`}
              />
              :<></>}
              {clients[(i*2)+1]?
@@ -118,7 +91,7 @@ export default function Home() {
                   height={200} // Desired size with correct aspect ratio
                   width={200} // Desired size with correct aspect ratio
                   alt="client"
-                  className={`${styles['horizontal-img-sm']} ${styles.client}`}
+                  className={`${styles['square-img']} ${styles.client}`}
               />
             :<></>}
            
@@ -132,14 +105,14 @@ export default function Home() {
                  height={200} // Desired size with correct aspect ratio
                  width={300} // Desired size with correct aspect ratio
                  alt="client"
-                 className={`${styles['horizontal-img']} ${styles.client}`}
+                 className={`${styles['horizontal-img-sm']} ${styles.client}`}
              />
              <Image
                  src={clients[(i*2)+1].img} // Route of the image file
                  height={200} // Desired size with correct aspect ratio
                  width={300} // Desired size with correct aspect ratio
                  alt="client"
-                 className={`${styles['horizontal-img']} ${styles.client}`}
+                 className={`${styles['horizontal-img-sm']} ${styles.client}`}
              />
            
          </div>
@@ -164,7 +137,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </Head>
       <Navbar/>
-      <Layout reverse={false} id='home'>
+
+      <Layout isblue={false} id='home'>
         <div className={styles.home}>
           <div className={styles['home-txt']}>
             <h1>Your Trusted Sworn Translator & Interpreter.</h1>
@@ -173,109 +147,104 @@ export default function Home() {
             <h6>Established Since 2000</h6>
           </div>
           <CarouselFade/>
-
         </div>
-        
       </Layout>
-      <Layout reverse={true} >
-        <h1 className={styles["section-title"]}>BBS Values</h1>
+
+      <Layout isblue={false} img="images/background2.jpg">
+        <div className={styles["article-section-title"]}>
+          <h2>Why Choose BBS?</h2>
+          <h3>OUR VALUE</h3>
+        </div>
         <div className={styles.values}>
-          <div className={styles.value}>
-            
-          </div>
-          <div className={styles.value}>
-            
-          </div>
-          <div className={styles.value}>
-            
-          </div>
+          {articles.map((article) => 
+              <div className={styles.card}>
+                <Image
+                  src={article.img} // Route of the image file
+                  height={200} // Desired size with correct aspect ratio
+                  width={320} // Desired size with correct aspect ratio
+                  alt="client"
+                  className={styles['article-img']}
+                />
+                <div className={styles['article-txt']}>
+                  <h4>{article.title}</h4>
+                  <p>{article.desc}</p>
+                  <Link className={styles["article-link"]} href={`/articles/${article.id}`}><p>more reading</p></Link>
+                </div>
+              
+              </div>
+          )}
         </div>
       </Layout>
-      <Layout reverse={false} id='portofolio'>
-        <h1 className={styles["section-title"]}>Portofolio</h1>
-        <div className={styles.portofolio}>
-          {/* <CarouselSlide/> */}
-          {loadPortofolioImg()}
-        </div>
-        <h5 className={styles['portofolio-txt']}>Trusted for over Two Decades</h5>
-      </Layout>
-      <Layout reverse={true} id='service'>
-        <h1 className={styles["section-title"]}>Service</h1>
-        <div className={styles.services}>
-          <div className={styles.service}>
-            
-          </div>
-          <div className={styles.service}>
-            
-            </div>
-        </div>
-      </Layout>
-      <Layout reverse={false} id='our-clients'>
-        <h1 className={styles["section-title"]}>Our Clients</h1>
-        <div className={styles.clients}>
-          {loadClientsImg()}
-        </div>
-      </Layout>
-      <Layout reverse={true}>
-        <h1 className={styles["section-title"]}>Let's Collaborate!</h1>
-        <div>
-          <div>
-            
-          </div>
-        </div>
-      </Layout>
-      <footer id='contact-us'>
-        {/* <div className={`${styles["footer-sections"]} ${styles.titles}`}>
-            <div className={styles["footer-section-lg"]}>
-              <h2 className={styles["footer-section-title"]}>Our Office</h2>
-            </div>
-            <div className={styles["footer-section"]}>
-              <h2 className={styles["footer-section-title"]}>Follow us</h2>
-            </div>
-            <div className={styles["footer-section"]}>
-              <h2 className={styles["footer-section-title"]}>Tags</h2>
-            </div>
-            <div className={styles["footer-section-lg"]}>
-              <h2 className={styles["footer-section-title"]}>Help & Support</h2>
-            </div>
 
-        </div> */}
-        <div className={styles["footer-sections"]}>
-          {/* <div> */}
-            <div className={styles["footer-section"]}>
-              <h2 className={styles["footer-section-title"]}>Our Office</h2>
-              <p>Woodland Residence Tower Matoa, Jl. Raya Kalibata, RT.6/RW.7, Rawajati, Kec. Pancoran, Kota Jakarta Selatan, Daerah khusus Ibukota Jakarta 12750</p>
-              <p>Phone:&nbsp;+62 887-3561-5623</p>
-              <p>Email:&nbsp;info@bbstrans.com</p>
-            </div>
-            <div className={styles["footer-section"]}>
-              <h2 className={styles["footer-section-title"]}>Follow us</h2>
-              <Link href="https://www.tiktok.com/@bbstrans">
-                <p className={styles["social-media"]}><TiktokIcon/>&nbsp;BBSTrans</p>
-              </Link>
-              <Link href="https://www.instagram.com/bbstrans/">
-                <p className={styles["social-media"]}>
-                    <InstagramIcon/>&nbsp;BBSTranslation
-                </p>
-              </Link>
-              <Link href="https://www.linkedin.com/in/bilingual-business-services-b26a0b162/">
-                <p className={styles["social-media"]}><LinkedInIcon/>&nbsp;BBSTranslation</p>
-              </Link>
-            </div>
-            <div className={styles["footer-section"]}>
-              <h2 className={styles["footer-section-title"]}>Tags</h2>
-              <p>Alamat</p>
-            </div>
-            <div className={styles["footer-section"]}>
-              <h2 className={styles["footer-section-title"]}>Help & Support</h2>
-              <p>terms & conditions</p>
-              <p>Contact Us</p>
-            </div>
-          {/* </div> */}
+      <Layout isblue={true} id='portofolio' img="images/home3.png">
+        <div className={styles["portofolio-content"]}>
+          <h2>PORTOFOLIO</h2>
+          <h3>OUR EVENTS</h3>
+          <div className={styles.portofolio}>
+            {/* <CarouselSlide/> */}
+            {loadPortofolioImg()}
+          </div>
+          {/* <h5 className={styles['portofolio-txt']}>Trusted for over Two Decades</h5> */}
         </div>
-        <p className={styles.copyright}>Ⓒ Copyright 2023 Billingual Business Service</p>
-      </footer>
-      
+      </Layout>
+
+      <Layout isblue={false} id='service' img='/images/home2.png'>
+        {/* <h1 className={styles["section-title"]}>Service</h1> */}
+        <div className={styles.services}>
+          {services.map((service) => 
+           <div className={styles.card}>
+              <Image
+                src={service.img} // Route of the image file
+                height={200} // Desired size with correct aspect ratio
+                width={320} // Desired size with correct aspect ratio
+                alt="client"
+                className={styles['service-img']}
+              />
+              <h2 className={styles["service-card-title"]}>{service.title}</h2>
+              <Link className={styles["service-link"]} href={`/`}><p>pesan sekarang</p></Link>
+            </div>
+          )}
+          <div className={styles["service-txt"]}>
+            <h2>OUR SERVICE</h2>
+            <h3>ONE STOP SERVICE FOR YOUR LANGUAGE NEEDS</h3>
+          </div>
+        </div>
+      </Layout>
+
+      <Layout isblue={false} id='our-clients' img="images/home3.png">
+        <div className={styles["our-clients-content"]}>
+          <h2>OUR CLIENTS</h2>
+          <h3>OUR HAPPY COSTOMERS</h3>
+          <div className={styles.clients}>
+            {loadClientsImg()}
+          </div>
+        </div>
+      </Layout>
+      <Layout isblue={true} img="images/home3.png">
+        <div className={styles.collaborate}>
+          <div className={styles["collaborate-content"]}>
+            <Image
+              src={"/images/team.jpeg"} // Route of the image file
+              height={350} // Desired size with correct aspect ratio
+              width={500} // Desired size with correct aspect ratio
+              alt="collaborate"
+              className={styles['collaborate-img']}
+            />
+            <div className={styles['collaborate-txt']}>
+              <h1>Let's Collaborate!</h1>
+              <h3>BILLINGUAL BUSINESS SERVICE</h3>
+              <p>
+                Seiring dengan perkembangan teknologi yang sedemikian cepatnya, kini telah banyak bermunculan tipe dan jenis alat-alat interpreting system yang semakin canggih. Bersamaan dengan itu pula, permintaan klien pun semakin kritis.
+                Guna menjawab kebutuhan klien-klien kami, kami telah memperoleh <mark>LISENSI DAELER RESMI</mark> dari sebuah produsen perangkat interpreter system terkemuka di dunia. Kami juga telah mempersiapkan katalog yang berisi contoh-contoh dari alat-alat interpreter terbaru dan teranyar saat ini. Klien-klien kami dapat menentukan pilihannya dengan mudah sesuai kebutuhannya.
+                Dengan kelengkapan peralatan interpreter system yang kami miliki, kami selalu berupaya untuk memberikan yang terbaik bagi klien-klien kami.
+                Hubungi kami untuk informasi sewa alat interpreter seperti <mark>Tour Guide System, Delegate Mic, dll</mark> di <mark>+62 877-3561-5623</mark> (Quick Response).
+              </p>
+              
+            </div>
+          </div>
+        </div>
+      </Layout>
+      <Footer/>
     </>
   );
 }

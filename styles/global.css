@@ -42,12 +42,26 @@ h1{
   font-family: 'futura-bold';
   font-weight: bolder;
   font-size: 45px;
+  margin: 0;
+}
+
+h2{
+  font-family: 'futura-bold';
+  font-size: 35px;
+  margin: 0;
 }
 
 h3{
   font-family: 'futura-medium';
   font-size: 25px;
+  margin: 0;
 }
+h4{
+  font-family: 'futura-medium';
+  font-size: 20px;
+  margin: 0;
+}
+
 
 h5{
   font-family: 'thesignature';
@@ -65,6 +79,11 @@ h6{
 p{
   font-family: 'futura';
   margin: 0;
+}
+
+mark{
+  background-color: rgba(255, 0, 0, 0);
+  color: #F8841C;
 }
 
 .center-txt{

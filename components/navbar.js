@@ -45,7 +45,7 @@ export default function Navbar(props) {
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{justifyContent:"center"}}>
             {/* <div className={styles["drawer-btn"]}> */}
-              <Link href={`#${item}`} className={styles["drawer-link"]}>
+              <Link href={`/#${item}`} className={styles["drawer-link"]}>
                 <p className={styles["nav-txt"]}>{item.replace("-", " ")}</p>
               </Link>
             {/* </div> */}
@@ -81,10 +81,10 @@ export default function Navbar(props) {
             />
           </div>
           <div className={styles.parallelogram}>
-            <Box sx={{ display: { xs: 'none', sm: 'flex'}, paddingRight:2,  transform: "skew(30deg)", heigth:"100%", alignItems:"center", flexWrap:"wrap"}}>
+            <Box sx={{ display: { xs: 'none', sm: 'flex'},width:"100%",paddingRight:2, justifyContent:"space-evenly",  transform: "skew(30deg)", heigth:"100%", alignItems:"center", flexWrap:"wrap"}}>
               {navItems.map((item) => (
                 <Button key={item} sx={{ marginLeft:2, height:"50px"}}>
-                  <Link href={`#${item}`}>
+                  <Link href={`/#${item}`}>
                     <h3 className={styles["nav-txt"]}>{item.replace("-", " ")}</h3>
                   </Link>
                 </Button>
