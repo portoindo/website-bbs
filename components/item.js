@@ -16,12 +16,6 @@ export default function Item(props) {
         }
     },[props])
 
-    // useEffect(()=> {
-    //     setInterval(() => {
-    //         setCheck(true)
-    //       }, 3000);
-    // })
-
     return (
         <Fade in={check}  mountOnEnter unmountOnExit timeout={800}>
             <Image
@@ -30,6 +24,7 @@ export default function Item(props) {
                 width={1500} // Desired size with correct aspect ratio
                 alt="Default Profile"
                 className={styles["img-item"]}
+                loading='eager'
             />
         </Fade>
     );

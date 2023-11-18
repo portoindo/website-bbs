@@ -33,7 +33,7 @@ export default function Navbar(props) {
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
         <div  className={styles['drawer-logo']}>
             <Image
-                src="/images/logo-bbs.png" // Route of the image file
+                src="/images/logo-bbs.webp" // Route of the image file
                 height={45} // Desired size with correct aspect ratio
                 width={65} // Desired size with correct aspect ratio
                 alt="Your Name"
@@ -59,7 +59,7 @@ export default function Navbar(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', height:"80px"}}>
       <CssBaseline />
       <AppBar component="nav" sx={{height:'fit-content', justifyContent:'center'}}>
         <div className={styles.toolbar}>
@@ -74,7 +74,7 @@ export default function Navbar(props) {
           </IconButton>
           <div  className={styles['nav-logo']}>
             <Image
-                src="/images/logo-bbs.png" // Route of the image file
+                src="/images/logo-bbs.webp" // Route of the image file
                 height={68} // Desired size with correct aspect ratio
                 width={100} // Desired size with correct aspect ratio
                 alt="Your Name"

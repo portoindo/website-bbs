@@ -3,18 +3,23 @@ import styles from '../styles/Home.module.css';
 import Layout from '../components/layout';
 import Navbar from '../components/navbar';
 import CarouselFade from '../components/carouselFade';
-import CarouselSlide from '../components/carouselSlide';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 import Link from 'next/link';
 import { clientsData, portofoliosData, articlesData, servicesData } from '../components/data';
 import Footer from '../components/footer';
+import { useIsVisible } from '../components/useIsVisible';
+import { ArrowForward } from '@mui/icons-material';
 
 export default function Home() {
   const [portofolio, setPortofolio] = useState(portofoliosData)
   const [clients, setClients] = useState(clientsData)
   const [articles, setArticles] = useState(articlesData)
   const [services, setServices] = useState(servicesData)
+  const refArticles = useRef();
+  const isArticleVisible = useIsVisible(refArticles);
+  const refService = useRef();
+  const isServiceVisible = useIsVisible(refService);
 
   const imgContainer = useRef()
 
@@ -129,17 +134,20 @@ export default function Home() {
     <>
      <Head>
         <title>Billingual Business Service</title>
-        <link rel="icon" href="/images/logo-bbs.png" />
+        <link rel="icon" href="/images/logo-bbs.webp" />
         <meta name="robots" content="all" />
         <link rel="canonical" href="https://bbstrans.vercel.app/"  key="canonical"/>
         <meta name="description" content="BBS Translation" />
         <meta name="keywords" content="sewa alat penerjemah, BBS translation, BBSTrans, alat penerjemah, alat interpreter, sewa alat interpreter, sewa delegate mic, interpreter equipment rental"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preload" as="image" href="home2.webp"></link>
+        <link rel="preload" as="image" href="home3.webp"></link>
+        <link rel="preload" as="image" href="background2.webp"></link>
     </Head>
       <Navbar/>
 
       <Layout isblue={false} id='home'>
-        <div className={styles.home}>
+        <div className={styles.home} >
           <div className={styles['home-txt']}>
             <h1>Your Trusted Sworn Translator & Interpreter.</h1>
             <p>We offer certified translation service for various languanges and high-quality interpreting equipment rental, including Tour Guide Systems and Delegate Mic.</p>
@@ -150,68 +158,67 @@ export default function Home() {
         </div>
       </Layout>
 
-      <Layout isblue={false} img="images/background2.jpg">
-        <div className={styles["article-section-title"]}>
-          <h2>Why Choose BBS?</h2>
-          <h3>OUR VALUE</h3>
-        </div>
-        <div className={styles.values}>
-          {articles.map((article) => 
-              <div className={styles.card}>
-                <Image
-                  src={article.img} // Route of the image file
-                  height={200} // Desired size with correct aspect ratio
-                  width={320} // Desired size with correct aspect ratio
-                  alt="client"
-                  className={styles['article-img']}
-                />
-                <div className={styles['article-txt']}>
-                  <h4>{article.title}</h4>
-                  <p>{article.desc}</p>
-                  <Link className={styles["article-link"]} href={`/articles/${article.id}`}><p>more reading</p></Link>
+      <Layout isblue={false} img="/images/background2.webp">
+        <div className={styles["articles-content"]} ref={refArticles}>
+          <div className={styles["article-section-title"]}>
+            <h2>Why Choose BBS?</h2>
+            <h3>OUR VALUE</h3>
+          </div>
+          <div className={styles.values}>
+            {articles.map((article) => 
+                <div className={`${styles["card-article"]} ${isArticleVisible ? styles.appear: styles.disappear}`}>
+                  <Image
+                    src={article.img} // Route of the image file
+                    height={200} // Desired size with correct aspect ratio
+                    width={320} // Desired size with correct aspect ratio
+                    alt="client"
+                    className={styles['article-img']}
+                  />
+                  <div className={styles['article-txt']}>
+                    <h4>{article.title}</h4>
+                    <p className={styles['article-desc']}>{article.desc}</p>
+                    <Link className={styles["article-link"]} href={`/articles/${article.id}`}><p>more reading <ArrowForward/></p></Link>
+                  </div>
+                
                 </div>
-              
-              </div>
-          )}
+            )}
+          </div>
         </div>
       </Layout>
 
-      <Layout isblue={true} id='portofolio' img="images/home3.png">
+      <Layout isblue={true} id='portofolio' img="images/home3.webp">
         <div className={styles["portofolio-content"]}>
           <h2>PORTOFOLIO</h2>
           <h3>OUR EVENTS</h3>
           <div className={styles.portofolio}>
-            {/* <CarouselSlide/> */}
             {loadPortofolioImg()}
           </div>
-          {/* <h5 className={styles['portofolio-txt']}>Trusted for over Two Decades</h5> */}
         </div>
       </Layout>
-
-      <Layout isblue={false} id='service' img='/images/home2.png'>
-        {/* <h1 className={styles["section-title"]}>Service</h1> */}
-        <div className={styles.services}>
-          {services.map((service) => 
-           <div className={styles.card}>
-              <Image
-                src={service.img} // Route of the image file
-                height={200} // Desired size with correct aspect ratio
-                width={320} // Desired size with correct aspect ratio
-                alt="client"
-                className={styles['service-img']}
-              />
-              <h2 className={styles["service-card-title"]}>{service.title}</h2>
-              <Link className={styles["service-link"]} href={`/`}><p>pesan sekarang</p></Link>
-            </div>
-          )}
-          <div className={styles["service-txt"]}>
-            <h2>OUR SERVICE</h2>
-            <h3>ONE STOP SERVICE FOR YOUR LANGUAGE NEEDS</h3>
+        
+      <Layout isblue={false} id='service' img='/images/home2.webp'>
+        <div className={styles["our-services-content"]}>
+          <h2>OUR SERVICES</h2>
+          <div className={styles.services} ref={refService}>
+            {services.map((service) => 
+            <div className={`${styles["card-service"]} ${isServiceVisible ? styles.appear: styles.disappear}`}>
+                <Image
+                  src={service.img} // Route of the image file
+                  height={200} // Desired size with correct aspect ratio
+                  width={320} // Desired size with correct aspect ratio
+                  alt="client"
+                  className={styles['service-img']}
+                />
+                <h2 className={styles["service-card-title"]}>{service.title}</h2>
+                <Link className={styles["service-link"]} href={`/`}><p>pesan sekarang</p></Link>
+              </div>
+            )}
+          
           </div>
         </div>
       </Layout>
 
-      <Layout isblue={false} id='our-clients' img="images/home3.png">
+      <Layout isblue={false} id='our-clients' img="images/home3.webp">
         <div className={styles["our-clients-content"]}>
           <h2>OUR CLIENTS</h2>
           <h3>OUR HAPPY COSTOMERS</h3>
@@ -220,11 +227,11 @@ export default function Home() {
           </div>
         </div>
       </Layout>
-      <Layout isblue={true} img="images/home3.png">
+      <Layout isblue={true} img="images/home3.webp">
         <div className={styles.collaborate}>
           <div className={styles["collaborate-content"]}>
             <Image
-              src={"/images/team.jpeg"} // Route of the image file
+              src={"/images/team.webp"} // Route of the image file
               height={350} // Desired size with correct aspect ratio
               width={500} // Desired size with correct aspect ratio
               alt="collaborate"

@@ -1,4 +1,27 @@
-.title{
-    margin-top: 100px;
-    background-color: aquamarine;
+.article-content{
+  min-height: 100vh;
+  text-align: center;
+  padding: 80px 0 50px 0;
+}
+.article-title{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.article-title h2{
+    color: #01013F;
+}
+.article-title h3{
+    color:#F8841C;
+    letter-spacing: 5px;
+}
+.article-card-container{
+    display: flex;
+    justify-content: center;
+}
+.article-card{
+    width: 80%;
+    min-height: 400px;
+    height: fit-content;
+    background-color: white;
+    border-radius: 70px;
 }
