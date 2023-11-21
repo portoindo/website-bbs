@@ -9,7 +9,9 @@
   height: 100vh;
 }
 .home-txt{
-  width: 450px;
+  /* width: 600px; */
+  /* margin-top: -20px; */
+  /* padding-top: -20px; */
   padding: 0px 100px 0 100px;
   position: absolute;
   z-index: 10;
@@ -27,11 +29,12 @@
   /* margin-left: 30px; */
   font-size: 45px;
   width: 80%;
+  min-width: 600px;
 }
 .home-txt p{
   margin-left: 50px;
   font-size: 22px;
-  width: 55%;
+  width: 600px;
 }
 .home-txt h6{
   margin-top:20px;
@@ -82,6 +85,7 @@
 }
 .article-txt{
   padding: 10px 30px 10px 30px;
+  color: black;
 }
 .article-txt h4{
   margin-bottom: 10px;
@@ -177,7 +181,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap-reverse;
-  justify-content: center;
+  justify-content: space-evenly;
+  padding: 0 100px 0 100px;
   width: 100%;
   /* padding-top: 50px; */
   /* min-height:120vh ; */
@@ -186,13 +191,13 @@
   
 }
 .card-service{
-  min-width: 320px;
+  min-width: 300px;
   width: 370px;
   min-height: 550px;
   height: fit-content;
   background-color: rgb(255, 255, 255);
   margin-bottom: 20px;
-  margin-right: 50px;
+  /* margin-right: 50px; */
   border-radius: 40px;
   color: black;
   padding: 10px;
@@ -242,7 +247,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
+  /* width: 100%; */
 }
 .our-clients-content h2{
   color: #01013F;
@@ -257,12 +263,14 @@
   padding-right: 10px;
   background-color: white;
   margin-top: 20px;
-  padding: 10px 30px 10px 30px;
-  width: 100vw;
+  padding: 10px 30px 10px 40px;
+  width: 100%;
   overflow-x:auto;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+ 
 }
+
 .clients::-webkit-scrollbar { /* Hide scrollbar for Chrome, Safari and Opera */
   display: none;
 }
@@ -294,7 +302,7 @@
 }
 .collaborate-txt{
   width: 40%;
-  min-width: 400px;
+  min-width: 320px;
   /* margin-right: 10%; */
   color: white;
   padding: 0 10px 0 10px;
@@ -388,8 +396,9 @@
     padding: 20px;
   }
   .home-txt h1{
-    font-size: 35px;
+    font-size: 40px !important;
     width: 100%;
+    min-width: 0;
   }
   .home-txt p{
     font-size: 20px;
@@ -413,6 +422,9 @@
     text-align: center;
   }
   
+  .collaborate-txt h1{
+   font-size: 45px !important;
+  }
   .collaborate-img{
     width: 100%;
     margin-right: 0;

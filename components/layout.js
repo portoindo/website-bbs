@@ -1,5 +1,4 @@
 import styles from './layout.module.css';
-import Head from 'next/head';
 
 export default function Layout(props) {
     const containerStyle = {

@@ -41,7 +41,7 @@ a {
 h1{
   font-family: 'futura-bold';
   font-weight: bolder;
-  font-size: 45px;
+  font-size: 55px !important;
   margin: 0;
 }
 
@@ -83,7 +83,8 @@ p{
 
 mark{
   background-color: rgba(255, 0, 0, 0);
-  color: #F8841C;
+  color: white;
+  text-decoration: underline;
 }
 
 .center-txt{

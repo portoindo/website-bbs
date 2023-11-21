@@ -1,5 +1,5 @@
 import styles from './item.module.css';
-import { Fade} from '@mui/material';
+import Fade from '@mui/material/Fade';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 

@@ -1,24 +1,24 @@
-.article-content{
+.service-content{
     min-height: 100vh;
     text-align: center;
     padding: 50px 0 50px 0;
 }
-.article-title{
+.service-title{
     text-align: center;
     margin-bottom: 30px;
 }
-.article-title h2{
+.service-title h2{
     color: #01013F;
 }
-.article-title h3{
+.service-title h3{
     color:#F8841C;
     letter-spacing: 5px;
 }
-.article-card-container{
+.service-card-container{
     display: flex;
     justify-content: center;
 }
-.article-card{
+.service-card{
     width: 80%;
     min-height: 400px;
     height: fit-content;
@@ -31,7 +31,7 @@
     display: flex;
     justify-content: center;
 }
-.article-img{
+.service-img{
     width: 350px;
     min-width: 200px;
     height: 450px;
@@ -40,12 +40,11 @@
     border-radius: 38px;
     margin-bottom: 20px;
 }
-.article-card p{
+.service-card p{
     text-align: start;
     margin-left: 50px;
     display: flex;
     flex: 1;
-    color: black;
     /* margin-right: 100px; */
     min-width: 360px;
     /* width: 55%; */
@@ -53,7 +52,7 @@
 }
 
 @media (max-width: 1024px) {
-    .article-card p{
+    .service-card p{
         /* width: 100%;  */
         /* margin-top: 20px; */
         margin-left: 0;
@@ -61,7 +60,7 @@
     }
 }
 @media (max-width: 768px) {
-    .article-card p{
+    .service-card p{
         min-width: 200px;
     }
 }

@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { clientsData, portofoliosData, articlesData, servicesData } from '../components/data';
 import Footer from '../components/footer';
 import { useIsVisible } from '../components/useIsVisible';
-import { ArrowForward } from '@mui/icons-material';
+import ArrowForward  from '@mui/icons-material/ArrowForward';
 
 export default function Home() {
   const [portofolio, setPortofolio] = useState(portofoliosData)
@@ -38,7 +38,7 @@ export default function Home() {
                     alt="portofolio"
                     className={`${styles['horizontal-img']} ${styles.porto}`}
                 />
-                <div className={styles['img-desc']}> asdfa sd</div>
+                {/* <div className={styles['img-desc']}> asdfa sd</div> */}
               </div>
             :<></>}
             {portofolio[(i*3)+1]?
@@ -50,7 +50,7 @@ export default function Home() {
                     alt="portofolio"
                     className={`${styles['horizontal-img']} ${styles.proto}`}
                 />
-               <div className={styles['img-desc']}> asdfa sd</div>
+               {/* <div className={styles['img-desc']}> asdfa sd</div> */}
               </div>
             :<></>}
             
@@ -65,7 +65,7 @@ export default function Home() {
                   alt="portofolio"
                   className={`${styles['vertical-img']} ${styles.proto}`}
               />
-              <div className={styles['img-desc']}> zzzzzzzzzzz zzzzzz</div>
+              {/* <div className={styles['img-desc']}> zzzzzzzzzzz zzzzzz</div> */}
               </div>  
           :<></>}
           </div>
@@ -80,7 +80,7 @@ export default function Home() {
     for (let i = 0; i < Math.round(clients.length/2); i++){
       if (i%2 !== 0){
         images.push(
-          <div>
+          <div className={styles["sub-clients"]}>
             {clients[i*2]?
              <Image
                  src={clients[i*2].img} // Route of the image file
@@ -142,7 +142,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preload" as="image" href="home2.webp"></link>
         <link rel="preload" as="image" href="home3.webp"></link>
-        <link rel="preload" as="image" href="background2.webp"></link>
+        <link rel="preload" as="image" href="horizontal4.webp"></link>
     </Head>
       <Navbar/>
 
@@ -152,13 +152,12 @@ export default function Home() {
             <h1>Your Trusted Sworn Translator & Interpreter.</h1>
             <p>We offer certified translation service for various languanges and high-quality interpreting equipment rental, including Tour Guide Systems and Delegate Mic.</p>
             <p>Professional, efficient, and competitive prices!</p>
-            <h6>Established Since 2000</h6>
           </div>
           <CarouselFade/>
         </div>
       </Layout>
 
-      <Layout isblue={false} img="/images/background2.webp">
+      <Layout isblue={false} img="/images/horizontal4.webp">
         <div className={styles["articles-content"]} ref={refArticles}>
           <div className={styles["article-section-title"]}>
             <h2>Why Choose BBS?</h2>
@@ -167,6 +166,7 @@ export default function Home() {
           <div className={styles.values}>
             {articles.map((article) => 
                 <div className={`${styles["card-article"]} ${isArticleVisible ? styles.appear: styles.disappear}`}>
+                  {/* <Link href={"/"}> */}
                   <Image
                     src={article.img} // Route of the image file
                     height={200} // Desired size with correct aspect ratio
@@ -179,7 +179,7 @@ export default function Home() {
                     <p className={styles['article-desc']}>{article.desc}</p>
                     <Link className={styles["article-link"]} href={`/articles/${article.id}`}><p>more reading <ArrowForward/></p></Link>
                   </div>
-                
+                  {/* </Link> */}
                 </div>
             )}
           </div>
@@ -202,6 +202,7 @@ export default function Home() {
           <div className={styles.services} ref={refService}>
             {services.map((service) => 
             <div className={`${styles["card-service"]} ${isServiceVisible ? styles.appear: styles.disappear}`}>
+              <Link  href={`/services/${service.id}`}>
                 <Image
                   src={service.img} // Route of the image file
                   height={200} // Desired size with correct aspect ratio
@@ -210,7 +211,8 @@ export default function Home() {
                   className={styles['service-img']}
                 />
                 <h2 className={styles["service-card-title"]}>{service.title}</h2>
-                <Link className={styles["service-link"]} href={`/`}><p>pesan sekarang</p></Link>
+              </Link>
+              <Link className={styles["service-link"]} href={`/`}><p>pesan sekarang</p></Link>
               </div>
             )}
           
@@ -231,7 +233,7 @@ export default function Home() {
         <div className={styles.collaborate}>
           <div className={styles["collaborate-content"]}>
             <Image
-              src={"/images/team.webp"} // Route of the image file
+              src={"/images/horizontal1.webp"} // Route of the image file
               height={350} // Desired size with correct aspect ratio
               width={500} // Desired size with correct aspect ratio
               alt="collaborate"
@@ -239,12 +241,12 @@ export default function Home() {
             />
             <div className={styles['collaborate-txt']}>
               <h1>Let's Collaborate!</h1>
-              <h3>BILLINGUAL BUSINESS SERVICE</h3>
+              <h3>ONE STOP SERVICE FOR YOUR LANGUAGE NEEDS</h3>
               <p>
-                Seiring dengan perkembangan teknologi yang sedemikian cepatnya, kini telah banyak bermunculan tipe dan jenis alat-alat interpreting system yang semakin canggih. Bersamaan dengan itu pula, permintaan klien pun semakin kritis.
-                Guna menjawab kebutuhan klien-klien kami, kami telah memperoleh <mark>LISENSI DAELER RESMI</mark> dari sebuah produsen perangkat interpreter system terkemuka di dunia. Kami juga telah mempersiapkan katalog yang berisi contoh-contoh dari alat-alat interpreter terbaru dan teranyar saat ini. Klien-klien kami dapat menentukan pilihannya dengan mudah sesuai kebutuhannya.
-                Dengan kelengkapan peralatan interpreter system yang kami miliki, kami selalu berupaya untuk memberikan yang terbaik bagi klien-klien kami.
-                Hubungi kami untuk informasi sewa alat interpreter seperti <mark>Tour Guide System, Delegate Mic, dll</mark> di <mark>+62 877-3561-5623</mark> (Quick Response).
+              Seiring dengan perkembangan teknologi yang sedemikian cepatnya, kini telah banyak bermunculan tipe dan jenis alat-alat interpreting system yang semakin canggih. Bersamaan dengan itu pula, permintaan klien pun semakin kritis.
+Guna menjawab kebutuhan klien-klien kami, kami telah memperoleh LISENSI DAELER RESMI dari sebuah produsen perangkat interpreter system terkemuka di dunia. Kami juga telah mempersiapkan katalog yang berisi contoh-contoh dari alat-alat interpreter terbaru dan teranyar saat ini. Klien-klien kami dapat menentukan pilihannya dengan mudah sesuai kebutuhannya.
+Dengan kelengkapan peralatan interpreter system yang kami miliki, kami selalu berupaya untuk memberikan yang terbaik bagi klien-klien kami.
+Hubungi kami untuk informasi sewa alat interpreter seperti <Link href={"https://www.alatinterpreter.com/tentang.html"}><mark>Tour Guide System</mark></Link>, <Link href={"https://www.alatinterpreter.com/tentang.html"}><mark>Delegate Mic</mark></Link>, dll di +62 877-3561-5623 (Quick Response).
               </p>
               
             </div>

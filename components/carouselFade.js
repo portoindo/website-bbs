@@ -1,7 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import styles from './layout.module.css';
-import { Fade, Box} from '@mui/material';
-import Image from 'next/image';
+import Box from '@mui/material/Box';
 import Item from './item';
 
 let index = 0
