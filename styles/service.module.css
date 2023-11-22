@@ -45,22 +45,23 @@
     margin-left: 50px;
     display: flex;
     flex: 1;
-    /* margin-right: 100px; */
     min-width: 360px;
-    /* width: 55%; */
-    /* width: 60%; */
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
+    .service-card{
+        padding: 25px;
+    }
     .service-card p{
-        /* width: 100%;  */
-        /* margin-top: 20px; */
         margin-left: 0;
-        /* min-width: 0px; */
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .service-card p{
         min-width: 200px;
+    }
+    .service-img{
+        min-height: 250px;
+        height: 250px;
     }
 }

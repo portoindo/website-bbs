@@ -70,8 +70,8 @@ export default function Navbar(props) {
             {/* <div className={styles['drawer-img-container']}> */}
               <Image
                   src="/images/logo-bbs.webp" // Route of the image file
-                  height={80} // Desired size with correct aspect ratio
-                  width={120} // Desired size with correct aspect ratio
+                  height={70} // Desired size with correct aspect ratio
+                  width={110} // Desired size with correct aspect ratio
                   alt="Your Name"
                   className={styles["drawer-img"]}
               />

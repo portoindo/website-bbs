@@ -110,3 +110,16 @@ mark{
   color: #020251;
   background-color: #f8f8f800;
 }
+
+.loading-container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.loading-container p{
+  margin-top: 10px;
+  font-size: 25px;
+  color: #FF7F00;
+}

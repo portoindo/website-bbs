@@ -9,12 +9,14 @@ import { clientsData, portofoliosData, articlesData, servicesData } from '../com
 import Footer from '../components/footer';
 import { useIsVisible } from '../components/useIsVisible';
 import ArrowForward  from '@mui/icons-material/ArrowForward';
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function Home() {
   const [portofolio, setPortofolio] = useState(portofoliosData)
   const [clients, setClients] = useState(clientsData)
   const [articles, setArticles] = useState(articlesData)
   const [services, setServices] = useState(servicesData)
+  const [isLoading, setIsLoading] = useState(false)
   const refArticles = useRef();
   const isArticleVisible = useIsVisible(refArticles);
   const refService = useRef();
@@ -131,6 +133,13 @@ export default function Home() {
 
   return (
     <>
+    {isLoading?
+    <div className='loading-container'>
+      <CircularProgress/>
+      <p>Getting Ready</p>
+    </div>
+    :
+    <>
       <Navbar/>
 
       <Layout isblue={false} id='home'>
@@ -164,7 +173,9 @@ export default function Home() {
                   <div className={styles['article-txt']}>
                     <h4>{article.title}</h4>
                     <p className={styles['article-desc']}>{article.desc}</p>
-                    <Link className={styles["article-link"]} href={`/articles/${article.id}`}><p>more reading <ArrowForward/></p></Link>
+                    <Link className={styles["article-link"]} href={`/articles/${article.id}`} onClick={() => setIsLoading(true)}>
+                      <p>more reading <ArrowForward/></p>
+                    </Link>
                   </div>
                   {/* </Link> */}
                 </div>
@@ -189,7 +200,7 @@ export default function Home() {
           <div className={styles.services} ref={refService}>
             {services.map((service) => 
             <div className={`${styles["card-service"]} ${isServiceVisible ? styles.appear: styles.disappear}`}>
-              <Link  href={`/services/${service.id}`}>
+              <Link  href={`/services/${service.id}`} onClick={() => setIsLoading(true)}>
                 <Image
                   src={service.img} // Route of the image file
                   height={200} // Desired size with correct aspect ratio
@@ -240,7 +251,10 @@ Hubungi kami untuk informasi sewa alat interpreter seperti <Link href={"https://
           </div>
         </div>
       </Layout>
+
       <Footer/>
+      </>
+      }
     </>
   );
 }

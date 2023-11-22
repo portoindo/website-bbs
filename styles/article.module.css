@@ -46,22 +46,23 @@
     display: flex;
     flex: 1;
     color: black;
-    /* margin-right: 100px; */
     min-width: 360px;
-    /* width: 55%; */
-    /* width: 60%; */
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
+    .article-card{
+        padding: 25px;
+    }
     .article-card p{
-        /* width: 100%;  */
-        /* margin-top: 20px; */
         margin-left: 0;
-        /* min-width: 0px; */
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .article-card p{
         min-width: 200px;
+    }
+    .article-img{
+        min-height: 250px;
+        height: 250px;
     }
 }
