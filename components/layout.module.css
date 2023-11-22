@@ -3,29 +3,18 @@
   height: fit-content;
   display: flex;
   flex-direction: column;
-}
-.empty-bg{
-  background-color: #ddd; /* Optional: Background color as a placeholder */
-
-  /* Apply a blurry effect to the background image */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* For compatibility with Safari */
-
-  /* Add a transition effect for a smoother appearance */
-  transition: backdrop-filter 0.3s ease-in-out; 
+  position: relative;
 }
 .bg-img{
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* object-fit: fill; */
+  object-fit: cover;
 }
 .gradient-filter{
   background: rgb(85,85,222);
   background: linear-gradient(27deg, rgba(85,85,222,1) 0%, rgba(255,255,255,0.7848389355742297) 39%, rgba(250,171,92,1) 100%);
+  position: relative;
 
 }
 .blue-filter{
-  background-color: #01013fe1
+  background-color: #01013fe1;
+  position: relative;
 }

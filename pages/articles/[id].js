@@ -71,7 +71,6 @@ export default function Article(articleData) {
                       alt="client"
                       className={styles['article-img']}
                     />
-                    {/* <h3>{articleData.articleData.title}</h3> */}
                     <p>{articleData.articleData.full}</p>
                 </div>
               </div>

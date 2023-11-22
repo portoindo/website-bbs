@@ -132,18 +132,6 @@ export default function Home() {
 
   return (
     <>
-     <Head>
-        <title>Billingual Business Service</title>
-        <link rel="icon" href="/images/logo-bbs.webp" />
-        <meta name="robots" content="all" />
-        <link rel="canonical" href="https://bbstrans.vercel.app/"  key="canonical"/>
-        <meta name="description" content="BBS Translation" />
-        <meta name="keywords" content="sewa alat penerjemah, BBS translation, BBSTrans, alat penerjemah, alat interpreter, sewa alat interpreter, sewa delegate mic, interpreter equipment rental"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preload" as="image" href="home2.webp"></link>
-        <link rel="preload" as="image" href="home3.webp"></link>
-        <link rel="preload" as="image" href="horizontal4.webp"></link>
-    </Head>
       <Navbar/>
 
       <Layout isblue={false} id='home'>
@@ -186,7 +174,7 @@ export default function Home() {
         </div>
       </Layout>
 
-      <Layout isblue={true} id='portofolio' img="images/home3.webp">
+      <Layout isblue={true} id='portofolio' img="/images/home3.webp">
         <div className={styles["portofolio-content"]}>
           <h2>PORTOFOLIO</h2>
           <h3>OUR EVENTS</h3>
@@ -220,7 +208,7 @@ export default function Home() {
         </div>
       </Layout>
 
-      <Layout isblue={false} id='our-clients' img="images/home3.webp">
+      <Layout isblue={false} id='our-clients' img="/images/home3.webp">
         <div className={styles["our-clients-content"]}>
           <h2>OUR CLIENTS</h2>
           <h3>OUR HAPPY COSTOMERS</h3>
@@ -229,7 +217,7 @@ export default function Home() {
           </div>
         </div>
       </Layout>
-      <Layout isblue={true} img="images/home3.webp">
+      <Layout isblue={true} img="/images/home3.webp">
         <div className={styles.collaborate}>
           <div className={styles["collaborate-content"]}>
             <Image
