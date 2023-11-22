@@ -5,7 +5,7 @@ import Head from 'next/head';
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#3535FF",
+      main: "#F8841C",
     },
     secondary:{
       main:"#F5E8B7"

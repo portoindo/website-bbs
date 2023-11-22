@@ -39,7 +39,7 @@
 /* BBS VALUES */
 .articles-content{
   min-height: 100vh;
-  padding: 80px 0 50px 0;
+  padding: 100px 0 50px 0;
 }
 .values{
   display: flex;
@@ -70,7 +70,6 @@
   transition: ease 2s;
 }
 .article-img{
-  /* padding: 10px; */
   width: 100%;
   height: 180px;
   border-radius: 40px;
@@ -122,7 +121,7 @@
 .portofolio-content{
   min-height: 100vh;
   text-align: center;
-  padding: 80px 0 50px 0;
+  padding: 100px 0 50px 0;
 }
 .portofolio-content h2{
   color: white;
@@ -156,7 +155,7 @@
 .our-services-content{
   min-height: 100vh;
   text-align: center;
-  padding: 80px 0 50px 0;
+  padding: 100px 0 50px 0;
 }
 .our-services-content h2{
   margin-top: 20px;
@@ -225,7 +224,7 @@
 .our-clients-content{
   min-height: 100vh;
   height: fit-content;
-  padding: 80px 0 80px 0;
+  padding: 100px 0 80px 0;
   display: flex;
   align-items: center;
   flex-direction: column;

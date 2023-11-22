@@ -64,20 +64,30 @@ export default function Navbar(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ ml: 2, display: { sm: 'none' } , width:"100%", justifyContent:"start"}}
           >
             <MenuIcon />
+            {/* <div className={styles['drawer-img-container']}> */}
+              <Image
+                  src="/images/logo-bbs.webp" // Route of the image file
+                  height={80} // Desired size with correct aspect ratio
+                  width={120} // Desired size with correct aspect ratio
+                  alt="Your Name"
+                  className={styles["drawer-img"]}
+              />
+            {/* </div> */}
           </IconButton>
-          <div  className={styles['nav-logo']}>
+          <div className={styles['nav-logo']}>
             <Image
                 src="/images/logo-bbs.webp" // Route of the image file
                 height={68} // Desired size with correct aspect ratio
                 width={100} // Desired size with correct aspect ratio
                 alt="Your Name"
+                className={styles["nav-img"]}
             />
           </div>
-          <div className={styles.parallelogram}>
-            <Box sx={{ display: { xs: 'none', sm: 'flex'},width:"100%",paddingRight:2, justifyContent:"space-evenly",  transform: "skew(30deg)", heigth:"100%", alignItems:"center", flexWrap:"wrap"}}>
+          {/* <div className={styles.parallelogram}> */}
+            <Box sx={{ display: { xs: 'none', sm: 'flex'},width:"100%",paddingRight:2, justifyContent:"space-evenly", heigth:"100%", alignItems:"center", flexWrap:"wrap"}}>
               {navItems.map((item) => (
                 <Button key={item} sx={{ marginLeft:2, height:"50px"}}>
                   <Link href={`/#${item}`}>
@@ -86,7 +96,7 @@ export default function Navbar(props) {
                 </Button>
               ))} 
             </Box>
-          </div>
+          {/* </div> */}
         </div>
       </AppBar>
       <nav>
