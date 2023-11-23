@@ -63,7 +63,9 @@ export default function Footer(props) {
                 <h2 className={styles["footer-section-title"]}>Help & Support</h2>
                 <div className={styles["footer-section-txt"]}>
                     <p className={styles["support-url"]}>Terms & Conditions</p>
-                    <p className={styles["support-url"]}>Contact Us</p>
+                    <Link href="mailto:info@bbstrans.com?subject=Informasi%20BBS">
+                        <p className={styles["support-url"]}>Contact Us</p>
+                    </Link>
                 </div>
                 </div>
             </div>
