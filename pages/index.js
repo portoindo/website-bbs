@@ -173,9 +173,9 @@ export default function Home() {
                   <div className={styles['article-txt']}>
                     <h4>{article.title}</h4>
                     <p className={styles['article-desc']}>{article.desc}</p>
-                    <Link className={styles["article-link"]} href={`/articles/${article.id}`} onClick={() => setIsLoading(true)}>
+                    {/* <Link className={styles["article-link"]} href={`/articles/${article.id}`} onClick={() => setIsLoading(true)}>
                       <p>more reading <ArrowForward/></p>
-                    </Link>
+                    </Link> */}
                   </div>
                   {/* </Link> */}
                 </div>
@@ -210,7 +210,7 @@ export default function Home() {
                 />
                 <h2 className={styles["service-card-title"]}>{service.title}</h2>
               </Link>
-              <Link className={styles["service-link"]} href={`/`}><p>pesan sekarang</p></Link>
+              <Link className={styles["service-link"]} href={`https://wa.me/6287735615623?text=Halo,%20saya%20tertarik%20untuk%20menggunakan%20layanan%20anda`}><p>pesan sekarang</p></Link>
               </div>
             )}
           

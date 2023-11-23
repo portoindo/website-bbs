@@ -133,6 +133,7 @@
 .portofolio{
   display: flex;
   flex-direction: row;
+  justify-content: center;
   overflow-x:auto;
   padding-right: 10px;
   -ms-overflow-style: none;  /* IE and Edge */
@@ -340,7 +341,11 @@
 
 
 
-
+@media (max-width: 1440px) {
+  .portofolio{
+    justify-content: start;
+  }
+}
 
 @media (max-width: 1000px) {
   .home-txt{

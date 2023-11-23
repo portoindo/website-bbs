@@ -15,8 +15,12 @@ export default function Footer(props) {
                     <h2 className={styles["footer-section-title"]}>Our Office</h2>
                     <div className={styles["footer-section-txt"]}>
                         <p>Woodland Residence Tower Matoa, Jl. Raya Kalibata, RT.6/RW.7, Rawajati, Kec. Pancoran, Kota Jakarta Selatan, Daerah khusus Ibukota Jakarta 12750</p>
-                        <p>Phone:&nbsp;+62 887-3561-5623</p>
-                        <p>Email:&nbsp;info@bbstrans.com</p>
+                        <Link href={`https://wa.me/6287735615623?text=Halo,%20saya%20tertarik%20untuk%20menggunakan%20layanan%20anda`}>
+                            <p>Phone:&nbsp;+62 887-3561-5623</p>
+                        </Link>
+                        <Link href="mailto:info@bbstrans.com?subject=Informasi%20BBS">
+                            <p>Email:&nbsp;info@bbstrans.com</p>
+                        </Link>
                         <Link href="https://www.tiktok.com/@bbstrans">
                             <p className={styles["social-media"]}><TiktokIcon/>&nbsp;BBSTrans</p>
                         </Link>

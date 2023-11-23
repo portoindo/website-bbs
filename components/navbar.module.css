@@ -2,22 +2,15 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* padding-left: 30px; */
     height: 100px;
-    /* height: fit-content; */
-    /* position: relative; */
 }
 .nav-logo{
     display: flex;
     padding-left: 40px;
-    /* justify-content: start; */
-    /* position: relative; */
-    /* position: absolute; */
     align-items: center;
-    /* margin: 10px 0 10px 0; */
     background-color: #3535FF;
     width: 40%;
-    height: 120px;
+    height: 110px;
     transform: skew(-30deg);
     margin-left: -40px;
     padding-right: 0px;
@@ -43,7 +36,7 @@
 .nav-txt{
     font-weight: 10px;
     font-size: 16px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 @media (max-width: 600px) {
