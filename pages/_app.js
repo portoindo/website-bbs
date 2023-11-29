@@ -38,6 +38,15 @@ export default function App({ Component, pageProps }) {
           <link rel="preload" as="image" href="images/home2.webp"></link>
           <link rel="preload" as="image" href="/images/home3.webp"></link>
           <link rel="preload" as="image" href="/images/horizontal4.webp"></link>
+          <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "Billingual Business Service",
+            "url": "https://www.bbstrans.id/",
+            "logo": "https://www.bbstrans.id/images/logo-bbs.webp"
+          })}
+        </script>
         </Head>
         <ThemeProvider theme={theme}>
             <Component {...pageProps} />

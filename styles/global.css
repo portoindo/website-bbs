@@ -87,6 +87,13 @@ mark{
   text-decoration: underline;
 }
 
+.container-info{
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .center-txt{
   text-align: center;
   margin: 0;
