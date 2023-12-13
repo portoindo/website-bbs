@@ -26,10 +26,10 @@ export default function Home() {
 
   const loadPortofolioImg = () => {
     let images = [];
-    for (let i = 0; i < Math.round(portofolio.length/3); i++){
+    for (let i = 0; i < Math.ceil(portofolio.length/3); i++){
       images.push(
         <>
-           <div>
+           <div className={styles['container-horizontal-img']}> 
             {portofolio[i*3]?
               <div className={styles['img-container']} ref={imgContainer}>
                 <Image
@@ -78,20 +78,20 @@ export default function Home() {
 
   const loadClientsImg = () => {
     let images = [];
-    for (let i = 0; i < Math.round(clients.length/2); i++){
+    for (let i = 0; i < Math.ceil(clients.length/2); i++){
       if (i%2 !== 0){
         images.push(
           <div className={styles["sub-clients"]}>
             {clients[i*2]?
-             <Image
-                 src={clients[i*2].img} // Route of the image file
-                 height={150} // Desired size with correct aspect ratio
-                 width={200} // Desired size with correct aspect ratio
-                 alt="client"
-                 className={`${styles['square-img']} ${styles.client}`}
-             />
+              <Image
+                  src={clients[i*2].img} // Route of the image file
+                  height={150} // Desired size with correct aspect ratio
+                  width={200} // Desired size with correct aspect ratio
+                  alt="client"
+                  className={`${styles['square-img']} ${styles.client}`}
+              />
              :<></>}
-             {clients[(i*2)+1]?
+             {clients[(i*2)+1] ?
               <Image
                   src={clients[(i*2)+1].img} // Route of the image file
                   height={200} // Desired size with correct aspect ratio
@@ -106,20 +106,24 @@ export default function Home() {
       }else{
         images.push(
           <div className={styles['horizontal-imgs']}>
-             <Image
-                 src={clients[i*2].img} // Route of the image file
-                 height={200} // Desired size with correct aspect ratio
-                 width={300} // Desired size with correct aspect ratio
-                 alt="client"
-                 className={`${styles['horizontal-img-sm']} ${styles.client}`}
-             />
-             <Image
-                 src={clients[(i*2)+1].img} // Route of the image file
-                 height={200} // Desired size with correct aspect ratio
-                 width={300} // Desired size with correct aspect ratio
-                 alt="client"
-                 className={`${styles['horizontal-img-sm']} ${styles.client}`}
-             />
+             {clients[i*2]?
+              <Image
+                  src={clients[i*2].img} // Route of the image file
+                  height={200} // Desired size with correct aspect ratio
+                  width={300} // Desired size with correct aspect ratio
+                  alt="client"
+                  className={`${styles['horizontal-img-sm']} ${styles.client}`}
+              />
+             :<></>}
+             {clients[(i*2)+1] ?
+              <Image
+                  src={clients[(i*2)+1].img} // Route of the image file
+                  height={200} // Desired size with correct aspect ratio
+                  width={300} // Desired size with correct aspect ratio
+                  alt="client"
+                  className={`${styles['horizontal-img-sm']} ${styles.client}`}
+              />
+             :<></>}
            
          </div>
        )

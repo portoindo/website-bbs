@@ -133,7 +133,7 @@
 .portofolio{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  /* justify-content: center; */
   overflow-x:auto;
   padding-right: 10px;
   -ms-overflow-style: none;  /* IE and Edge */
@@ -149,6 +149,12 @@
 }
 .porto{
   object-fit: cover;
+}
+.container-horizontal-img{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
 }
 
 
@@ -340,12 +346,12 @@
 }
 
 
-
+/* 
 @media (max-width: 1700px) {
   .portofolio{
     justify-content: start;
   }
-}
+} */
 
 @media (max-width: 1000px) {
   .home-txt{

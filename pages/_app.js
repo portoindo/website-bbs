@@ -44,7 +44,7 @@ export default function App({ Component, pageProps }) {
             "@type": "Organization",
             "name": "Billingual Business Service",
             "url": "https://www.bbstrans.id/",
-            "logo": "https://www.bbstrans.id/images/logo-bbs.webp"
+            "logo": "https://www.bbstrans.id/images/logo-gradient.webp"
           })}
         </script>
         </Head>
